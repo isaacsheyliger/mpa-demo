@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
    * @returns {JSX.Element} The rendered component
    */
 export function Hero({ className, img }: {className: string, img: string}) {
-  
   return (
     <div className={className + " flex-col items-center justify-center mx-auto my-8 p-4 bg-white text-black w-full md:w-4/5"}>
       <h1 className="text-4xl font-bold mb-2 text-center">Welcome to Our Service</h1>

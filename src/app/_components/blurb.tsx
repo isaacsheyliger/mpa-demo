@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
 /**
@@ -25,6 +26,7 @@ export function Blurb({
             <div className="w-1/2 p-4 flex flex-col justify-center">
                 <h2 className="text-2xl font-bold mb-2">{title}</h2>
                 <p className="text-lg">{description}</p>
+                <Button className="w-20">Press me</Button>
             </div>
         </div>
     );

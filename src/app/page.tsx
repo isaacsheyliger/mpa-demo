@@ -9,6 +9,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from '@/components/ui/button';
+import { Compare } from './_components/compare';
+import { ContactForm } from './_components/contactform';
 
 const blurbs = [
     {
@@ -57,6 +59,12 @@ export default function Home() {
                 <Blurb title={blurb.title} description={blurb.description} orientation={index % 2 == 0 ? false : true} img='/vercel.svg' />
             </div>
             ))}
+        </div>
+        <div>
+            <Compare />
+        </div>
+        <div>
+            <ContactForm />
         </div>
     </main>
   );

@@ -3,7 +3,7 @@ import { PricingTable } from "../_components/pricingtable";
 
 export default function Page() {
     return (
-        <main className="flex flex-col grow">
+        <main className="flex flex-col grow mb-4">
             <Compare />
             <PricingTable />
         </main>

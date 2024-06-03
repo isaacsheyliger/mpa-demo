@@ -16,7 +16,7 @@ export function Footer() {
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Logo */}
             <div className="flex justify-center md:justify-start md:ml-12">
-                <img src="/logo.png" alt="Logo" className="h-10" />
+                <img src="/logotext.svg" alt="Logo" className="h-16" />
             </div>
 
             {/* Page Links */}

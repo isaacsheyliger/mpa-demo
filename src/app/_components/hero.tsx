@@ -17,8 +17,8 @@ export function Hero({ className, img }: {className: string, img: string}) {
         <Image 
           src={img} 
           alt="Hero Image" 
-          layout="fill" 
-          objectFit="cover" 
+          fill
+          style={{ objectFit: 'cover' }}
         />
       </div>
     </div>

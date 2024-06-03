@@ -28,7 +28,7 @@ const blurbs = [
 ]
 export default function Home() {
   return (
-    <main className="flex flex-col grow">
+    <main className="flex flex-col grow mb-4 mt-[52px] md:mt-0">
         <div>
             <Hero className="flex md:hidden" img="/vercel.svg"></Hero>
             <Hero className="hidden md:flex" img="/next.svg"></Hero>

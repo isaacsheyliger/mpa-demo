@@ -1,7 +1,11 @@
+import { Compare } from "../_components/compare";
+import { PricingTable } from "../_components/pricingtable";
+
 export default function Page() {
     return (
-        <div className="grow">
-            <h1>Hello, Next.js!</h1>
-        </div>
+        <main className="flex flex-col grow">
+            <Compare />
+            <PricingTable />
+        </main>
     )
 }

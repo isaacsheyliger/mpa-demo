@@ -7,8 +7,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-import clsx from 'clsx';
-
 /**
  * A responsive comparison component with three cards.
  * The center card slightly overlaps the other two cards.

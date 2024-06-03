@@ -63,7 +63,7 @@ export default function Home() {
         <div>
             <Compare />
         </div>
-        <div>
+        <div className='flex justify-center items-center m-auto'>
             <ContactForm />
         </div>
     </main>

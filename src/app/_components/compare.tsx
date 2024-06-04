@@ -89,7 +89,7 @@ export function Compare() {
             <p className="text-gray-400 pb-2">{cards.card3.subtext}</p>
             <CardDescription className="flex items-baseline text-4xl font-bold text-black pb-8">
                 {cards.card3.price}
-                <p className="text-sm text-black">/mo</p>
+                <span className="text-sm text-black">/mo</span>
             </CardDescription>
             <CardContent className="space-y-2 mb-8">
                 {cards.card3.features.map((feature, index) => (

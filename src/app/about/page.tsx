@@ -28,11 +28,12 @@ export default function Page() {
                 <Hero className="flex md:hidden" img="/vercel.svg"></Hero>
                 <Hero className="hidden md:flex" img="/next.svg"></Hero>
             </div>
-            <div className='flex flex-row'>
+            <div className='flex flex-col md:flex-row max-w-[80%] self-center'>
                 {/* map about us details to cards/blurbs */}
                 {blurbs.map((blurb, index) => (
                 <div
                 key={index}
+                className='my-2 md:mx-2'
                 >
                     <Card>
                         <CardHeader>

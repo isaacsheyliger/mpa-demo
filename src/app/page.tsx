@@ -11,19 +11,23 @@ import {
 import { Button } from '@/components/ui/button';
 import { Compare } from './_components/compare';
 import { ContactForm } from './_components/contactform';
+import Link from 'next/link';
 
 const blurbs = [
     {
       title: "Feature",
       description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
+      href: "",
     },
     {
         title: "Feature",
         description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
+        href: "",
     },
     {
         title: "Feature",
         description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
+        href: "",
     },
 ]
 export default function Home() {
@@ -37,15 +41,20 @@ export default function Home() {
             {/* map titles and descriptions to card/blurbs */}
             {blurbs.map((blurb, index) => (
             <div
-            key={index}
+            key={index} 
+            className='self-center max-w-[80%]'
             >
-                <Card>
+                <Card className='my-2'>
                     <CardHeader>
                         <CardTitle>{blurb.title}</CardTitle>
                         <CardDescription>{blurb.description}</CardDescription>
                     </CardHeader>
-                    <CardContent>
-                        <Button>Press me</Button>
+                    <CardContent className='flex'>
+                        <Button>
+                            <Link href={blurb.href}>
+                                Learn More
+                            </Link>
+                        </Button>
                     </CardContent>
                 </Card> 
             </div>

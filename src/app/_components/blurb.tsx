@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 /**
  * Blurb component displays an image and text side by side with configurable orientation.
@@ -26,7 +27,9 @@ export function Blurb({
             <div className="w-1/2 p-4 flex flex-col justify-center">
                 <h2 className="text-2xl font-bold mb-2">{title}</h2>
                 <p className="text-lg">{description}</p>
-                <Button className="w-20">Press me</Button>
+                <Button className="w-24 mt-4">
+                    <Link href="/services">Learn More</Link>
+                </Button>
             </div>
         </div>
     );

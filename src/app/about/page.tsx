@@ -9,15 +9,18 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const blurbs = [
     {
       title: "Feature",
       description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
+      href: "",
     },
     {
         title: "Feature",
         description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
+        href: "",
     },
 ]
 
@@ -41,7 +44,11 @@ export default function Page() {
                             <CardDescription>{blurb.description}</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <Button>Press me</Button>
+                            <Button>
+                                <Link href={blurb.href}>
+                                    Learn More
+                                </Link>
+                            </Button>
                         </CardContent>
                     </Card> 
                 </div>

@@ -17,18 +17,45 @@ import {
 import { useLocation } from "react-router-dom"
 
 // Maintain for potential additional dropdown items
-/*
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "",
+    title: "Lawn Care",
     href: "/",
     description:
       "",
   },
-] 
-*/
+  {
+    title: "Tree Removal",
+    href: "/",
+    description:
+      "",
+  },
+  {
+    title: "Snow Removal",
+    href: "/",
+    description:
+      "",
+  },{
+    title: "Hardscaping",
+    href: "/",
+    description:
+      "",
+  },
+  {
+    title: "Artificial Turf",
+    href: "/",
+    description:
+      "",
+  },
+  {
+    title: "Commercial",
+    href: "/",
+    description:
+      "",
+  },
+]
 
-const links = ["Home", "About", "Services", "Pricing", "Contact"]
+const links = ["Home", "About Us", "Services", "Gallery", "Contact"]
 
 /**
  * Navigation menu component with Home, About, Portfolio, Services, and Contact links.
@@ -45,15 +72,31 @@ export function Nav() {
     return (
         <NavigationMenu className={isOpen ? "flex-col bg-white" : "" + "grow-0 shrink-0"}>
             <NavigationMenuList className="hidden md:flex py-2">
-                {links.map((link) => (
-                    <NavigationMenuItem className="hover:border-b-2 hover:border-black focus:border-b-2 focus:border-black" key={link}>
-                        <Link href={link == "Home" ? "/" : `/${link.toLowerCase()}`} legacyBehavior passHref>
+                {links.map((link, index) => {
+                  return link == "Services" ? 
+                  (
+                    <NavigationMenuItem className="border-b-2 border-white hover:border-black focus:border-black" key={link}>
+                        <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ul className="w-[150px]">
+                            {components.map((component) => (
+                              <ListItem key={component.href} title={component.title} href={component.href} className="py-2">
+                                {component.description}
+                              </ListItem>
+                            ))} 
+                          </ul>
+                        </NavigationMenuContent>
+                    </NavigationMenuItem>
+                  )
+                  : (
+                    <NavigationMenuItem className="border-b-2 border-white hover:border-black focus:border-black" key={link}>
+                        <Link href={link == "Home" ? "/" : link == "About Us" ? "/about" : `/${link.toLowerCase()}`} legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 {link}
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
-                ))}
+                )})}
             </NavigationMenuList>
 
             <NavigationMenuItem className="flex md:hidden m-0.5">
@@ -92,7 +135,7 @@ export function Nav() {
 }
 
 // Maintain for potential additional dropdown items
-/*
+
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
@@ -118,4 +161,3 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
-*/

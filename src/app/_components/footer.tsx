@@ -25,8 +25,8 @@ export function Footer() {
                     <h3 className="font-extrabold text-lg mb-2 md:ml-0">Product</h3>
                     <ul>
                         <li><a href="/services" className="">Services</a></li>
-                        <li><a href="/pricing" className="">Pricing</a></li>
-                        <li><a href="/clients" className="">Clients</a></li>
+                        <li><a href="/gallery" className="">Gallery</a></li>
+                        <li><a href="/reviews" className="">Reviews</a></li>
                     </ul>
                 </div>
                 <div className="ml-4 md:ml-0">

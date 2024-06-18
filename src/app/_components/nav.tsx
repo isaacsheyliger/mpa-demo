@@ -20,36 +20,36 @@ import { useLocation } from "react-router-dom"
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Lawn Care",
-    href: "/",
+    href: "/services/lawn-care",
     description:
       "",
   },
   {
     title: "Tree Removal",
-    href: "/",
+    href: "/services/tree-removal",
     description:
       "",
   },
   {
     title: "Snow Removal",
-    href: "/",
+    href: "/services/snow-removal",
     description:
       "",
   },{
     title: "Hardscaping",
-    href: "/",
+    href: "/services/hardscaping",
     description:
       "",
   },
   {
     title: "Artificial Turf",
-    href: "/",
+    href: "/services/artificial-turf",
     description:
       "",
   },
   {
     title: "Commercial",
-    href: "/",
+    href: "/services/commercial",
     description:
       "",
   },
@@ -81,7 +81,6 @@ export function Nav() {
                           <ul className="w-[150px]">
                             {components.map((component) => (
                               <ListItem key={component.href} title={component.title} href={component.href} className="py-2">
-                                {component.description}
                               </ListItem>
                             ))} 
                           </ul>

@@ -14,13 +14,41 @@ import { ContactForm } from '../_components/contactform';
 
 const blurbs = [
     {
-      title: "Feature",
-      description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
-    },
-    {
-        title: "Feature",
-        description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
-    },
+        title: "Lawn Care",
+        href: "/services/lawn-care",
+        description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
+      },
+      {
+        title: "Tree Removal",
+        href: "/services/tree-removal",
+        description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
+      },
+      {
+        title: "Snow Removal",
+        href: "/services/snow-removal",
+        description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
+      },
+      {
+        title: "Hardscaping",
+        href: "/services/hardscaping",
+        description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
+      },
+      {
+        title: "Artificial Turf",
+        href: "/services/artificial-turf",
+        description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
+      },
+      {
+        title: "Commercial",
+        href: "/services/commercial",
+        description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
+      },
 ]
 
 export default function Page() {
@@ -31,6 +59,7 @@ export default function Page() {
                 <Hero className="hidden md:flex" img="/next.svg"></Hero>
             </div>
             <div className='flex md:hidden flex-col'>
+                <h1 className='text-4xl font-bold self-center'>Services</h1>
                 {/* map titles and descriptions to card/blurbs */}
                 {blurbs.map((blurb, index) => (
                 <div
@@ -49,11 +78,13 @@ export default function Page() {
                 ))}
             </div>
             <div className='hidden md:flex flex-col'>
+                <h1 className='text-4xl font-bold self-center'>Services</h1>
                 {blurbs.map((blurb, index) => (
                 <div
                 key={index}
+                className='flex items-center justify-center max-h-[300px]'
                 >
-                    <Blurb title={blurb.title} description={blurb.description} orientation={index % 2 == 0 ? false : true} img='/vercel.svg' />
+                    <Blurb title={blurb.title} description={blurb.description} href={blurb.href} orientation={index % 2 == 0 ? false : true} img='/vercel.svg' />
                 </div>
                 ))}
             </div>

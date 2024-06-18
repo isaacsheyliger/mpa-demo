@@ -7,15 +7,13 @@ import { Button } from "@/components/ui/button"
    * @param img A string that provides the image src for the hero cover
    * @returns {JSX.Element} The rendered component
    */
-export function Hero({ className, img }: {className: string, img: string}) {
+export function Hero({ className, img }: {className: string, img?: string}) {
   return (
-    <div className={className + " flex-col items-center justify-center mx-auto my-8 p-4 bg-white text-black w-full md:w-4/5"}>
-      <h1 className="text-4xl font-bold mb-2 text-center">Welcome to Our Service</h1>
-      <p className="text-xl mb-4 text-center">Discover the amazing features we offer to make your life easier.</p>
-      <Button className="mb-12">Find out More</Button>
+    <div className={className + " flex-col items-center justify-center mb-8 p-4 pt-0 bg-white text-black w-full"}>
       <div className="relative w-full md:p-4 md:aspect-[2/1] aspect-square">
+        {/* Make this a carousel of images */}
         <Image 
-          src={img} 
+          src={img ? img : "/vercel.svg"} 
           alt="Hero Image" 
           fill
           style={{ objectFit: 'cover' }}

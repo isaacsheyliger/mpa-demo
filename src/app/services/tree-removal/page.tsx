@@ -5,9 +5,8 @@ const detail = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
 export default function Page() {
     return (
         <main className="flex flex-col grow mb-4 mt-[52px] md:mt-0">
-            <div>
-                <Hero className="flex md:hidden" img="/tree-removal.jpg"></Hero>
-                <Hero className="hidden md:flex" img="/tree-removal.jpg"></Hero>
+            <div className='mb-8'>
+                <Hero img={["/tree-removal.jpg"]} />
             </div>
             <div className='flex flex-col m-auto items-center'>
                 <h1 className='text-4xl font-bold'>Tree Removal</h1>

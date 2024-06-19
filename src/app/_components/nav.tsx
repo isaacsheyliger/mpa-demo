@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 import { Button } from "@/components/ui/button"
@@ -70,8 +71,15 @@ export function Nav() {
     };
 
     return (
-        <NavigationMenu className={isOpen ? "flex-col bg-white" : "" + "grow-0 shrink-0"}>
-            <NavigationMenuList className="hidden md:flex py-2">
+        <NavigationMenu className={isOpen ? "flex-col bg-white" : "" + ""}>
+            <NavigationMenuItem className="list-none">
+                <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <Image src="/logotext.svg" alt="logo" width={150} height={150} />
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
+            <NavigationMenuList className="hidden md:flex pb-2">
                 {links.map((link, index) => {
                   return link == "Services" ? 
                   (
@@ -100,11 +108,11 @@ export function Nav() {
 
             <NavigationMenuItem className="flex md:hidden m-0.5">
                 <Button
-                    onClick={toggleMenu}
-                    type="button"
-                    className="inline-flex items-center justify-center p-2 h-fit w-fit rounded-none bg-white text-black shadow-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-white"
-                    aria-controls="mobile-menu"
-                    aria-expanded={isOpen}
+                onClick={toggleMenu}
+                type="button"
+                className="inline-flex items-center justify-center p-2 h-fit w-fit rounded-none bg-white text-black shadow-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-white"
+                aria-controls="mobile-menu"
+                aria-expanded={isOpen}
                 >
                     <span className="sr-only">Open main menu</span>
                     {isOpen ? (

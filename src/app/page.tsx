@@ -21,7 +21,7 @@ const services = [
     },
     {
         title: "Tree Removal",
-        img: "/tree-removal.jpg",
+        img: "/tree-removal-3.jpg",
     },
     {
         title: "Snow Removal",
@@ -29,7 +29,7 @@ const services = [
     },
     {
         title: "Hardscaping",
-        img: "/hardscaping.jpg",
+        img: "/hardscaping-2.jpg",
     },
     {
         title: "Artificial Turf",
@@ -37,7 +37,7 @@ const services = [
     },
     {
         title: "Commercial",
-        img: "/commercial.jpg",
+        img: "/commercial-3.jpg",
     },
 ]
 
@@ -47,21 +47,21 @@ const reviews = [
       rating: 5,
       description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
       href: "/reviews",
-      img: "/vercel.svg",
+      img: "/stock-2.jpg",
     },
     {
         title: "Jane Doe",
         rating: 5,
         description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
         href: "/reviews",
-        img: "/next.svg",
+        img: "/hardscaping.jpg",
     },
     {
         title: "Juan Doe",
         rating: 5,
         description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
         href: "/reviews",
-        img: "/vercel.svg",
+        img: "/snow-removal-4.jpg",
     },
 ]
 
@@ -69,27 +69,24 @@ export default function Home() {
   return (
     <main className="flex flex-col grow mb-4 mt-[52px] md:mt-0">
         <div>
-            <Hero className="flex md:hidden" img="/vercel.svg"></Hero>
-            <Hero className="hidden md:flex" img="/next.svg"></Hero>
+            <Hero />
         </div>
-        <div className='flex flex-col'>
+
+        <div className='flex flex-col my-8'>
+            <h1 className='text-4xl font-bold self-center mt-4'>Our Services</h1>
             <div className='grid grid-cols-1 md:grid-cols-3'>
                 {services.map((service, index) => (
-                    <Card key={index} className='m-2'>
-                        <CardHeader>
-                            <CardTitle>{service.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <img src={service.img} alt={service.title} className='w-full h-48 object-cover' />
-                        </CardContent>
-                        <CardFooter>
-                            <Button>
-                                <Link href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>
-                                    Learn More
-                                </Link>
-                            </Button>
-                        </CardFooter>
-                    </Card>
+                    <Link className='flex flex-col items-center' key={index} href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>
+                        <Card className='transition ease-in-out w-[300px] h-[300px] mt-8 hover:scale-105'>
+                            <Image src={service.img} alt={service.title} className='aspect-square rounded-lg' width={300} height={300}></Image>
+                        </Card>
+                        <p className='my-2'>{service.title}</p>
+                        <Button>
+                            <p>
+                                Learn More
+                            </p>
+                        </Button>
+                    </Link>
                 ))}
             </div>
         </div>
@@ -118,19 +115,19 @@ export default function Home() {
         </div>
 
         <div className='flex items-center justify-center max-h-[300px] mt-8'>
-            <Blurb title='About Us' description='We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.' href='/about' img='/vercel.svg' orientation={false} />
+            <Blurb title='About Us' description='We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.' href='/about' img='/gallery-6.jpg' orientation={false} />
         </div>
 
         <div className='flex flex-col my-16'>
-            <h2 className='text-2xl font-bold self-center mt-4'>Customer Reviews</h2>
+            <h2 className='text-4xl font-bold self-center mt-4 mb-8'>Customer Reviews</h2>
             {reviews.map((blurb, index) => (
             <div
             key={index}
-            className='flex items-center justify-center max-h-[300px]'
+            className='flex items-center justify-center max-h-[300px] my-1'
             >
-                <div className={`flex flex-col sm:flex-row ${index % 2 != 0 ? 'sm:flex-row-reverse' : ''} items-center justify-center m-12 w-full max-h-[300px]`} role="region" aria-labelledby="blurb-title">
+                <div className={`flex flex-col sm:flex-row ${index % 2 != 0 ? 'sm:flex-row-reverse' : ''} items-center justify-center m-12 w-full max-h-[300px] border border-black rounded-lg`} role="region" aria-labelledby="blurb-title">
                     <div className="relative w-1/2 max-h-[300px] aspect-square" role="img" aria-label={blurb.title}>
-                        <Image src={blurb.img} alt={blurb.title} fill style={{ objectFit: 'cover' }} className="rounded-lg px-12" />
+                        <Image src={blurb.img} alt={blurb.title} fill style={{ objectFit: 'cover' }} className={`z-[-1] rounded-lg " ${index % 2 != 0 ? "pl-24" : "pr-24"}`}/>
                     </div>
                     <div className="w-1/2 p-4 flex flex-col justify-center">
                         <h2 className="text-2xl font-bold mb-2">{blurb.title}</h2>

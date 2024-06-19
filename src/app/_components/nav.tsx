@@ -83,7 +83,7 @@ export function Nav() {
                 {links.map((link, index) => {
                   return link == "Services" ? 
                   (
-                    <NavigationMenuItem className="border-b-2 border-white hover:border-black focus:border-black" key={link}>
+                    <NavigationMenuItem className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100" key={link}>
                         <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <ul className="w-[150px]">
@@ -96,7 +96,7 @@ export function Nav() {
                     </NavigationMenuItem>
                   )
                   : (
-                    <NavigationMenuItem className="border-b-2 border-white hover:border-black focus:border-black" key={link}>
+                    <NavigationMenuItem className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100" key={link}>
                         <Link href={link == "Home" ? "/" : link == "About Us" ? "/about" : `/${link.toLowerCase()}`} legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 {link}

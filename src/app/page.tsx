@@ -10,34 +10,46 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from '@/components/ui/button';
-import { Compare } from './_components/compare';
 import { ContactForm } from './_components/contactform';
 import Link from 'next/link';
+
+import lawncare from '../../public/lawn-care.jpg';
+import treeremoval3 from '../../public/tree-removal-3.jpg';
+import snowremoval from '../../public/snow-removal.jpg';
+import hardscaping2 from '../../public/hardscaping.jpg';
+import artificialturf from '../../public/artificial-turf.jpg';
+import commercial from '../../public/commercial-3.jpg';
+
+import gallery6 from '../../public/gallery-6.jpg';
+
+import stock2 from '../../public/stock-2.jpg';
+import hardscaping from '../../public/hardscaping-2.jpg';
+import snowremoval4 from '../../public/snow-removal-4.jpg';
 
 const services = [
     {
         title: "Lawn Care",
-        img: "/lawn-care.jpg",
+        img: lawncare,
     },
     {
         title: "Tree Removal",
-        img: "/tree-removal-3.jpg",
+        img: treeremoval3,
     },
     {
         title: "Snow Removal",
-        img: "/snow-removal.jpg",
+        img: snowremoval,
     },
     {
         title: "Hardscaping",
-        img: "/hardscaping-2.jpg",
+        img: hardscaping2,
     },
     {
         title: "Artificial Turf",
-        img: "/artificial-turf.jpg",
+        img: artificialturf,
     },
     {
         title: "Commercial",
-        img: "/commercial-3.jpg",
+        img: commercial,
     },
 ]
 
@@ -47,21 +59,21 @@ const reviews = [
       rating: 5,
       description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
       href: "/reviews",
-      img: "/stock-2.jpg",
+      img: stock2,
     },
     {
         title: "Jane Doe",
         rating: 5,
         description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
         href: "/reviews",
-        img: "/hardscaping.jpg",
+        img: hardscaping,
     },
     {
         title: "Juan Doe",
         rating: 5,
         description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
         href: "/reviews",
-        img: "/snow-removal-4.jpg",
+        img: snowremoval4,
     },
 ]
 
@@ -78,7 +90,14 @@ export default function Home() {
                 {services.map((service, index) => (
                     <Link className='flex flex-col items-center' key={index} href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>
                         <Card className='transition ease-in-out w-[300px] h-[300px] mt-8 hover:scale-105'>
-                            <Image src={service.img} alt={service.title} className='aspect-square rounded-lg' width={300} height={300}></Image>
+                            <Image 
+                            className='aspect-square rounded-lg' 
+                            src={service.img} 
+                            alt={service.title} 
+                            width={300} 
+                            height={300} 
+                            placeholder='blur'
+                            />
                         </Card>
                         <p className='my-2'>{service.title}</p>
                         <Button>
@@ -90,6 +109,11 @@ export default function Home() {
                 ))}
             </div>
         </div>
+
+        <div className='flex items-center justify-center max-h-[300px] mt-8'>
+            <Blurb title='About Us' description='We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.' href='/about' img={gallery6} orientation={false} />
+        </div>
+
         <div className='flex md:hidden flex-col'>
             {/* map titles and descriptions to card/blurbs */}
             {reviews.map((blurb, index) => (
@@ -114,11 +138,7 @@ export default function Home() {
             ))}
         </div>
 
-        <div className='flex items-center justify-center max-h-[300px] mt-8'>
-            <Blurb title='About Us' description='We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.' href='/about' img='/gallery-6.jpg' orientation={false} />
-        </div>
-
-        <div className='flex flex-col my-16'>
+        <div className='hidden md:flex flex-col my-16'>
             <h2 className='text-4xl font-bold self-center mt-4 mb-8'>Customer Reviews</h2>
             {reviews.map((blurb, index) => (
             <div
@@ -127,7 +147,14 @@ export default function Home() {
             >
                 <div className={`flex flex-col sm:flex-row ${index % 2 != 0 ? 'sm:flex-row-reverse' : ''} items-center justify-center m-12 w-full max-h-[300px] border border-black rounded-lg`} role="region" aria-labelledby="blurb-title">
                     <div className="relative w-1/2 max-h-[300px] aspect-square" role="img" aria-label={blurb.title}>
-                        <Image src={blurb.img} alt={blurb.title} fill style={{ objectFit: 'cover' }} className={`z-[-1] rounded-lg " ${index % 2 != 0 ? "pl-24" : "pr-24"}`}/>
+                        <Image 
+                        className={`z-[-1] rounded-lg " ${index % 2 != 0 ? "pl-24" : "pr-24"}`}
+                        src={blurb.img} 
+                        alt={blurb.title} 
+                        fill 
+                        style={{ objectFit: 'cover' }} 
+                        placeholder='blur'
+                        />
                     </div>
                     <div className="w-1/2 p-4 flex flex-col justify-center">
                         <h2 className="text-2xl font-bold mb-2">{blurb.title}</h2>

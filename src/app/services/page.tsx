@@ -12,6 +12,18 @@ import { Button } from '@/components/ui/button';
 import { Compare } from '../_components/compare';
 import { ContactForm } from '../_components/contactform';
 
+import stock from '../../public/stock.jpg';
+import treeremoval from '../../public/tree-removal.jpg';
+import snowremoval2 from '../../public/snow-removal-2.jpg';
+import hardscaping from '../../public/hardscaping.jpg';
+import artificialturf from '../../public/artificial-turf.jpg';
+import commercial3 from '../../public/commercial-3.jpg';
+
+import lawncare2 from '../../public/lawn-care-2.jpg';
+import snowremoval3 from '../../public/snow-removal-3.jpg';
+import hardscaping3 from '../../public/hardscaping-3.jpg';
+import commercial2 from '../../public/commercial-2.jpg';
+
 const blurbs = [
     {
         title: "Lawn Care",
@@ -19,51 +31,51 @@ const blurbs = [
         description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
         img: "/stock.jpg",
-      },
-      {
+    },
+    {
         title: "Tree Removal",
         href: "/services/tree-removal",
         description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
-        img: "/tree-removal.jpg",
-      },
-      {
+        img: treeremoval,
+    },
+    {
         title: "Snow Removal",
         href: "/services/snow-removal",
         description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
-        img: "/snow-removal-2.jpg",
-      },
-      {
+        img: snowremoval2,
+    },
+    {
         title: "Hardscaping",
         href: "/services/hardscaping",
         description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
-        img: "/hardscaping.jpg",
-      },
-      {
+        img: hardscaping,
+    },
+    {
         title: "Artificial Turf",
         href: "/services/artificial-turf",
         description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
-        img: "/artificial-turf.jpg",
-      },
-      {
+        img: artificialturf,
+    },
+    {
         title: "Commercial",
         href: "/services/commercial",
         description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
-        img: "/commercial-3.jpg",
-      },
+        img: commercial3,
+    },
 ]
 
 const images = [
-    "/lawn-care-2.jpg",
-    "/tree-removal.jpg",
-    "/snow-removal-3.jpg",
-    "/hardscaping-3.jpg",
-    "/artificial-turf.jpg",
-    "/commercial-2.jpg",
+    lawncare2,
+    treeremoval,
+    snowremoval3,
+    hardscaping3,
+    artificialturf,
+    commercial2,
 ]
 
 export default function Page() {

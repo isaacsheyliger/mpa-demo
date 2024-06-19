@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import {
     Carousel,
     CarouselContent,
@@ -10,13 +10,17 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 
+import stock from '../../../public/stock.jpg';
+import stock3 from '../../../public/stock-3.jpg';
+import stock4 from '../../../public/stock-4.jpg';
+
 /**
  * Hero component
  * @param className HTML class input
  * @param img A string that provides the image src for the hero cover
  * @returns {JSX.Element} The rendered component
  */
-export function Hero({ className, img }: {className?: string, img?: string[]}) {
+export function Hero({ className, img }: {className?: string, img?: StaticImageData[] | string[]}) {
     const nextButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
@@ -32,7 +36,7 @@ export function Hero({ className, img }: {className?: string, img?: string[]}) {
     }, []);
     
     if (!img) {
-        img =  ["/stock-3.jpg", "/stock-4.jpg", "/stock.jpg"]
+        img =  [stock, stock3, stock4]
     }
 
     return (
@@ -49,6 +53,7 @@ export function Hero({ className, img }: {className?: string, img?: string[]}) {
                                 alt={`Carousel Image ${index + 1}`}
                                 fill
                                 style={{ objectFit: 'cover' }}
+                                placeholder='blur'
                                 />
                             </div>
                         </CarouselItem>

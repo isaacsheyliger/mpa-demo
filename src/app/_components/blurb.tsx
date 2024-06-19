@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 /**
@@ -21,12 +21,19 @@ export function Blurb({
     description: string;
     href: string;
     orientation: boolean;
-    img: string;
+    img: StaticImageData | string;
 }) {
     return (
         <div className={`flex flex-col sm:flex-row ${orientation ? 'sm:flex-row-reverse' : ''} items-center justify-between m-12 w-full max-h-[300px] ${className ? className : ''}`} role="region" aria-labelledby="blurb-title">
             <div className="relative w-1/2 max-h-[300px] aspect-square" role="img" aria-label={title}>
-                <Image src={img} alt={title} fill style={{ objectFit: 'cover' }} className={`z-[-1] ${orientation ? " rounded-r-lg" : " rounded-l-lg"}`} />
+                <Image
+                className={`z-[-1] ${orientation ? " rounded-r-lg" : " rounded-l-lg"}`} 
+                src={img} 
+                alt={title} 
+                fill 
+                style={{ objectFit: 'cover' }} 
+                placeholder='blur'
+                />
             </div>
             <div className="w-1/2 p-8 flex flex-col justify-center">
                 <h2 className="text-2xl font-bold mb-2">{title}</h2>

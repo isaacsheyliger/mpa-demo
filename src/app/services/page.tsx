@@ -12,17 +12,17 @@ import { Button } from '@/components/ui/button';
 import { Compare } from '../_components/compare';
 import { ContactForm } from '../_components/contactform';
 
-import stock from '../../public/stock.jpg';
-import treeremoval from '../../public/tree-removal.jpg';
-import snowremoval2 from '../../public/snow-removal-2.jpg';
-import hardscaping from '../../public/hardscaping.jpg';
-import artificialturf from '../../public/artificial-turf.jpg';
-import commercial3 from '../../public/commercial-3.jpg';
+import stock from '../../../public/stock.jpg';
+import treeremoval from '../../../public/tree-removal.jpg';
+import snowremoval2 from '../../../public/snow-removal-2.jpg';
+import hardscaping from '../../../public/hardscaping.jpg';
+import artificialturf from '../../../public/artificial-turf.jpg';
+import commercial3 from '../../../public/commercial-3.jpg';
 
-import lawncare2 from '../../public/lawn-care-2.jpg';
-import snowremoval3 from '../../public/snow-removal-3.jpg';
-import hardscaping3 from '../../public/hardscaping-3.jpg';
-import commercial2 from '../../public/commercial-2.jpg';
+import lawncare2 from '../../../public/lawn-care-2.jpg';
+import snowremoval3 from '../../../public/snow-removal-3.jpg';
+import hardscaping3 from '../../../public/hardscaping-3.jpg';
+import commercial2 from '../../../public/commercial-2.jpg';
 
 const blurbs = [
     {
@@ -30,7 +30,7 @@ const blurbs = [
         href: "/services/lawn-care",
         description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing. Ante in nibh mauris cursus mattis molestie a iaculis.",
-        img: "/stock.jpg",
+        img: stock,
     },
     {
         title: "Tree Removal",

@@ -79,7 +79,7 @@ const reviews = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col grow mb-4 mt-[52px] md:mt-0">
+    <main className="flex flex-col grow mb-4">
         <div>
             <Hero />
         </div>
@@ -110,8 +110,26 @@ export default function Home() {
             </div>
         </div>
 
-        <div className='flex items-center justify-center max-h-[300px] mt-8'>
-            <Blurb title='About Us' description='We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.' href='/about' img={gallery6} orientation={false} />
+        <div className='hidden md:flex items-center justify-center max-h-[300px] mt-8'>
+            <Blurb title='About Us' description='We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.' href='/about' img={gallery6} orientation={false} /> 
+        </div>
+        <div className='flex flex-col md:hidden items-center justify-center my-8'>
+            <div className='relative w-full aspect-[4/3]'>
+                <Image 
+                src={gallery6} 
+                alt='About Us' 
+                fill 
+                style={{ objectFit: 'cover' }}                
+                placeholder='blur'
+                />
+            </div>
+            <h1 className='text-4xl font-bold self-center mt-4'>About Us</h1>
+            <p className='max-w-[70%] my-8'>We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.</p>
+            <Button>
+                <Link href='/about'>
+                    Learn More
+                </Link>
+            </Button>
         </div>
 
         <div className='flex md:hidden flex-col'>
@@ -176,8 +194,8 @@ export default function Home() {
             ))}
         </div>
 
-        <div className="flex justify-evenly mb-8">
-            <div className="px-8">
+        <div className="flex flex-col items-center md:items-start md:flex-row md:justify-evenly mb-8">
+            <div className="px-8 my-4 md:my-0">
                 <h2 className="text-4xl font-bold text-center">Contact Us</h2>
                 <p className="text-center">Have a question? Want to schedule a service? <br/> Send us a message!</p>
             </div>

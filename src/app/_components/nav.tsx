@@ -1,11 +1,11 @@
 "use client"
 
-import React, { useEffect } from "react"
+import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-
 import { Button } from "@/components/ui/button"
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,10 +13,22 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import { useLocation } from "react-router-dom"
 
+import {
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerTitle,
+    DrawerTrigger,
+} from "@/components/ui/drawer"
+import { useMediaQuery } from "../_hooks/use-media-query"
+  
 // Maintain for potential additional dropdown items
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -64,15 +76,12 @@ const links = ["Home", "About Us", "Services", "Gallery", "Contact"]
  * @returns {JSX.Element} Navigation menu.
  */
 export function Nav() {
-    const [isOpen, setIsOpen] = React.useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+    const isDesktop = useMediaQuery("(min-width: 768px)")
 
     return (
-        <NavigationMenu className={isOpen ? "flex-col bg-white" : "" + ""}>
-            <NavigationMenuItem className="list-none">
+        isDesktop ? (
+        <NavigationMenu>
+            <NavigationMenuItem className="hidden md:flex list-none">
                 <Link href="/" legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         <Image src="/logotext.svg" alt="logo" width={150} height={150} />
@@ -81,65 +90,113 @@ export function Nav() {
             </NavigationMenuItem>
             <NavigationMenuList className="hidden md:flex pb-2">
                 {links.map((link, index) => {
-                  return link == "Services" ? 
-                  (
-                    <NavigationMenuItem className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100" key={link}>
-                        <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <ul className="w-[150px]">
-                            {components.map((component) => (
-                              <ListItem key={component.href} title={component.title} href={component.href} className="py-2">
-                              </ListItem>
-                            ))} 
-                          </ul>
-                        </NavigationMenuContent>
-                    </NavigationMenuItem>
-                  )
-                  : (
-                    <NavigationMenuItem className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100" key={link}>
-                        <Link href={link == "Home" ? "/" : link == "About Us" ? "/about" : `/${link.toLowerCase()}`} legacyBehavior passHref>
-                            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                {link}
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                )})}
-            </NavigationMenuList>
-
-            <NavigationMenuItem className="flex md:hidden m-0.5">
-                <Button
-                onClick={toggleMenu}
-                type="button"
-                className="inline-flex items-center justify-center p-2 h-fit w-fit rounded-none bg-white text-black shadow-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-white"
-                aria-controls="mobile-menu"
-                aria-expanded={isOpen}
-                >
-                    <span className="sr-only">Open main menu</span>
-                    {isOpen ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>
+                    return link == "Services" ? (
+                        <NavigationMenuItem
+                            className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
+                            key={link}
+                        >
+                            <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
+                            <NavigationMenuContent>
+                                <ul className="w-[150px]">
+                                    {components.map((component) => (
+                                        <ListItem
+                                            key={component.href}
+                                            title={component.title}
+                                            href={component.href}
+                                            className="py-2"
+                                        ></ListItem>
+                                    ))}
+                                </ul>
+                            </NavigationMenuContent>
+                        </NavigationMenuItem>
                     ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
-                    )}
-                </Button>
-            </NavigationMenuItem>
-            <NavigationMenuList className={`${isOpen ? 'flex' : 'hidden'} md:hidden`} id="mobile-menu">
-                <NavigationMenuItem className="mx-8 px-2 pt-2 pb-3 space-y-4 sm:px-3">
-                {links.map((link) => (
-                        <Link href={link == "Home" ? "/" : `/${link.toLowerCase()}`} key={link} legacyBehavior passHref>
-                            <NavigationMenuLink className="block px-2 text-left text-base font-medium border-l-2 border-white hover:border-black active:border-black focus:border-black" onClick={toggleMenu}>
-                                {link}
-                            </NavigationMenuLink>
-                        </Link>
-                ))}
-                </NavigationMenuItem>
+                        <NavigationMenuItem
+                            className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
+                            key={link}
+                        >
+                            <Link
+                                href={
+                                    link == "Home"
+                                        ? "/"
+                                        : link == "About Us"
+                                        ? "/about"
+                                        : `/${link.toLowerCase()}`
+                                }
+                                legacyBehavior
+                                passHref
+                            >
+                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                    {link}
+                                </NavigationMenuLink>
+                            </Link>
+                        </NavigationMenuItem>
+                    );
+                })}
             </NavigationMenuList>
         </NavigationMenu>
-    )
+        ) : (
+        <div className="h-[56px]">
+            <Drawer direction="right">
+                <DrawerTrigger>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-12 m-1">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+                </svg>
+
+
+                </DrawerTrigger>
+                <DrawerTitle className="sr-only">Main Menu</DrawerTitle>
+                <DrawerContent className="space-y-2 pt-8">
+                    <Image className="mb-4 pl-6" src="/logotext.svg" alt="logo" width={150} height={150} />
+                    {links.map((link) => (
+                    <Link
+                    className="block px-2 text-left text-base font-medium border-l-2 border-white hover:border-black active:border-black focus:border-black"
+                    href={
+                        link == "Home"
+                            ? "/"
+                            : link == "About Us"
+                            ? "/about"
+                            : `/${link.toLowerCase()}`
+                    }
+                    key={link}
+                    legacyBehavior
+                    passHref
+                    >
+                        <div className="flex flex-row-reverse justify-end pl-4 ease-out after:duration-500 after:block after:w-0.5 after:h-full after:origin-top-left after:scale-y-0 after:bg-black after:transition-transform after:hover:origin-top-left after:hover:scale-y-100 after:focus:origin-top-left after:focus:scale-y-100 after:active:origin-top-left after:active:scale-y-100">
+                            <p className="pl-2">{link}</p>    
+                        </div>
+                    </Link>
+                    ))}
+                </DrawerContent>
+            </Drawer>
+        </div>
+        )
+    );
 }
+
+                    // <span className="sr-only">Open main menu</span>
+                    // {isOpen ? (
+                    //     <div className="flex items-baseline">
+                    //         <svg
+                    //             xmlns="http://www.w3.org/2000/svg"
+                    //             fill="none"
+                    //             viewBox="0 0 24 24"
+                    //             strokeWidth="1.5"
+                    //             stroke="currentColor"
+                    //             className="size-6"
+                    //         >
+                    //             <path
+                    //                 strokeLinecap="round"
+                    //                 strokeLinejoin="round"
+                    //                 d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                    //             />
+                    //         </svg>
+                    //     </div>
+                    // ) : (
+                    //     <div className="flex items-baseline">
+                    //         <Image src="/logotext.svg" alt="logo" width={77} height={77} />
+                            
+                    //     </div>
+                    // )}
 
 // Maintain for potential additional dropdown items
 

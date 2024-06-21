@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import { ContactForm } from "../_components/contactform";
 import { Hero } from "../_components/hero";
+
+export const metadata: Metadata = {
+    title: `Contact Us | Contractor Demo Site`,
+};
 
 export default function Page() {
     return (

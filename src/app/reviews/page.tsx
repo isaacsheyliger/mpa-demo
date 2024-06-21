@@ -1,4 +1,9 @@
+import { Metadata } from "next"
 import { Card } from "@/components/ui/card"
+
+export const metadata: Metadata = {
+    title: `Reviews | Contractor Demo Site`,
+};
 
 const reviews = [
     {

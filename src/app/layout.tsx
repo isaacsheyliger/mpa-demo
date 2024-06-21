@@ -5,19 +5,19 @@ import { Footer } from "./_components/footer";
 import "./globals.css";
 
 const lato = Lato({ 
-  weight: "400",
-  subsets: ["latin"] 
+    weight: "400",
+    subsets: ["latin"] 
 });
 
 export const metadata: Metadata = {
-  title: "MB Designs",
-  description: "Design, Develop, and Deploy fast, responsive, and sleek websites for your small business",
+    title: `Home | Contractor Demo Site`,
+    description: "Design, Develop, and Deploy fast, responsive, and sleek websites for your small business",
 };
 
 export default function RootLayout({
-  children,
+    children,
 }: Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className="dark h-full box-border">

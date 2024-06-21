@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { Hero } from '@/app/_components/hero';
 import { Blurb } from '@/app/_components/blurb';
 import {
@@ -22,6 +23,11 @@ import snowremoval3 from '../../../public/snow-removal-3.jpg';
 import hardscaping3 from '../../../public/hardscaping-3.jpg';
 import commercial2 from '../../../public/commercial-2.jpg';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+    title: `Services | Contractor Demo Site`,
+};
+
 const blurbs = [
     {
         title: "Lawn Care",

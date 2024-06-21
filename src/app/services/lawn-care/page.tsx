@@ -5,7 +5,7 @@ const detail = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
 
 export default function Page() {
     return (
-        <main className="flex flex-col grow mb-4 mt-[52px] md:mt-0">
+        <main className="flex flex-col grow mb-4">
             <div className='mb-8'>
                 <Hero img={[lawncare2]} />
             </div>

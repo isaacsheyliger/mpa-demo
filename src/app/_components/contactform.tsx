@@ -49,16 +49,16 @@ export function ContactForm() {
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[20rem] md:w-[24rem]">
             <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
+            control={form.control}
+            name="name"
+            render={({ field }) => (
                 <FormItem>
                     <FormControl>
-                        <Input placeholder="Name" {...field} />
+                        <Input className="bg-green-900" placeholder="Name" {...field} />
                     </FormControl>
                     <FormMessage />
                 </FormItem>
-              )}
+            )}
             /> 
             <FormField
               control={form.control}
@@ -66,7 +66,7 @@ export function ContactForm() {
               render={({ field }) => (
                 <FormItem>
                     <FormControl>
-                        <Input placeholder="Email" {...field} />
+                        <Input className="bg-green-900" placeholder="Email" {...field} />
                     </FormControl>
                     <FormMessage />
                 </FormItem>
@@ -78,7 +78,7 @@ export function ContactForm() {
               render={({ field }) => (
                 <FormItem>
                     <FormControl>
-                        <Input placeholder="Phone Number" {...field} />
+                        <Input className="bg-green-900" placeholder="Phone Number" {...field} />
                     </FormControl>
                     <FormMessage />
                 </FormItem>
@@ -90,7 +90,7 @@ export function ContactForm() {
               render={({ field }) => (
                 <FormItem>
                     <FormControl>
-                        <Textarea placeholder="Enter your message here..." {...field} />
+                        <Textarea className="bg-green-900" placeholder="Enter your message here..." {...field} />
                     </FormControl>
                     <FormMessage />
                 </FormItem>

@@ -9,8 +9,6 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Button } from '@/components/ui/button';
-import { Compare } from '../_components/compare';
-import { ContactForm } from '../_components/contactform';
 
 import stock from '../../../public/stock.jpg';
 import treeremoval from '../../../public/tree-removal.jpg';
@@ -23,7 +21,7 @@ import lawncare2 from '../../../public/lawn-care-2.jpg';
 import snowremoval3 from '../../../public/snow-removal-3.jpg';
 import hardscaping3 from '../../../public/hardscaping-3.jpg';
 import commercial2 from '../../../public/commercial-2.jpg';
-
+import Link from 'next/link';
 const blurbs = [
     {
         title: "Lawn Care",
@@ -80,12 +78,12 @@ const images = [
 
 export default function Page() {
     return (
-        <main className="flex flex-col grow mb-4 mt-[52px] md:mt-0">
+        <main className="flex flex-col grow mb-4">
             <div className='mb-8'>
                 <Hero img={images} />
             </div>
             <h1 className='text-4xl font-bold self-center'>Services</h1>
-            <div className='flex md:hidden flex-col my-8'>
+            <div className='flex md:hidden flex-col m-8 space-y-4'>
                 {/* map titles and descriptions to card/blurbs */}
                 {blurbs.map((blurb, index) => (
                 <div
@@ -97,7 +95,11 @@ export default function Page() {
                             <CardDescription>{blurb.description}</CardDescription>
                         </CardHeader>
                         <CardContent>
-                            <Button>Press me</Button>
+                            <Button>
+                                <Link href={blurb.href}>
+                                    Learn More
+                                </Link> 
+                            </Button>
                         </CardContent>
                     </Card> 
                 </div>

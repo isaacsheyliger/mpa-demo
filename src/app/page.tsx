@@ -140,17 +140,26 @@ export default function Home() {
             className='self-center max-w-[80%]'
             >
                 <Card className='my-2'>
-                    <CardHeader>
+                    <CardHeader className='px-6 pt-6 pb-4'>
                         <CardTitle>{blurb.title}</CardTitle>
-                        <CardDescription>{blurb.description}</CardDescription>
                     </CardHeader>
-                    <CardContent className='flex'>
+                    <CardContent className='flex flex-col'>
+                        <div className="flex pb-4">
+                            {[1, 2, 3, 4, 5].map((star) => (
+                                <svg key={star} className={`w-4 h-4 fill-current ${star <= blurb.rating ? "text-yellow-500" : "text-gray-300"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12 2l2.121 6.485 6.879.502-5.281 4.854 1.562 6.875-6.281-4.063-6.281 4.063 1.562-6.875-5.281-4.854 6.879-.502z" />
+                                </svg>
+                            ))}
+                        </div>
+                        <CardDescription>{blurb.description}</CardDescription>
+                    </CardContent>
+                    <CardFooter>
                         <Button>
                             <Link href={blurb.href}>
                                 Learn More
                             </Link>
                         </Button>
-                    </CardContent>
+                    </CardFooter>
                 </Card> 
             </div>
             ))}

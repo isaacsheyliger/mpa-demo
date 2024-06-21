@@ -53,7 +53,7 @@ const reviews = [
 
 export default function Page() {
     return (
-        <main className="flex flex-col grow mb-4 mt-[52px] md:mx-auto md:min-w-[60%]">
+        <main className="flex flex-col grow my-8 md:mx-auto md:min-w-[60%]">
             <h1 className="text-4xl font-bold mx-auto mb-4">Customer Reviews</h1>
             <div className="flex flex-col">
                 {reviews.map((review, index) => (

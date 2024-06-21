@@ -4,7 +4,8 @@ import React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import { useMediaQuery } from "../_hooks/use-media-query"
+import yourlogo from "../../../public/yourlogotext.svg"
 
 import {
   NavigationMenu,
@@ -27,9 +28,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
-import { useMediaQuery } from "../_hooks/use-media-query"
-  
-// Maintain for potential additional dropdown items
+
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Lawn Care",
@@ -84,7 +83,7 @@ export function Nav() {
             <NavigationMenuItem className="hidden md:flex list-none">
                 <Link href="/" legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <Image src="/logotext.svg" alt="logo" width={150} height={150} />
+                        <Image src={yourlogo} alt="logo" width={150} height={150} />
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
@@ -92,7 +91,7 @@ export function Nav() {
                 {links.map((link, index) => {
                     return link == "Services" ? (
                         <NavigationMenuItem
-                            className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
+                            className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
                             key={link}
                         >
                             <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
@@ -111,7 +110,7 @@ export function Nav() {
                         </NavigationMenuItem>
                     ) : (
                         <NavigationMenuItem
-                            className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-black after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
+                            className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
                             key={link}
                         >
                             <Link
@@ -149,7 +148,7 @@ export function Nav() {
                     <Image className="mb-4 pl-6" src="/logotext.svg" alt="logo" width={150} height={150} />
                     {links.map((link) => (
                     <Link
-                    className="block px-2 text-left text-base font-medium border-l-2 border-white hover:border-black active:border-black focus:border-black"
+                    className="block px-2 text-left text-base font-medium border-l-2 border-white hover:border-primary active:border-primary focus:border-primary"
                     href={
                         link == "Home"
                             ? "/"
@@ -161,7 +160,7 @@ export function Nav() {
                     legacyBehavior
                     passHref
                     >
-                        <div className="flex flex-row-reverse justify-end pl-4 ease-out after:duration-500 after:block after:w-0.5 after:h-full after:origin-top-left after:scale-y-0 after:bg-black after:transition-transform after:hover:origin-top-left after:hover:scale-y-100 after:focus:origin-top-left after:focus:scale-y-100 after:active:origin-top-left after:active:scale-y-100">
+                        <div className="flex flex-row-reverse justify-end pl-4 ease-out after:duration-500 after:block after:w-0.5 after:h-full after:origin-top-left after:scale-y-0 after:bg-primary after:transition-transform after:hover:origin-top-left after:hover:scale-y-100 after:focus:origin-top-left after:focus:scale-y-100 after:active:origin-top-left after:active:scale-y-100">
                             <p className="pl-2">{link}</p>    
                         </div>
                     </Link>
@@ -172,33 +171,6 @@ export function Nav() {
         )
     );
 }
-
-                    // <span className="sr-only">Open main menu</span>
-                    // {isOpen ? (
-                    //     <div className="flex items-baseline">
-                    //         <svg
-                    //             xmlns="http://www.w3.org/2000/svg"
-                    //             fill="none"
-                    //             viewBox="0 0 24 24"
-                    //             strokeWidth="1.5"
-                    //             stroke="currentColor"
-                    //             className="size-6"
-                    //         >
-                    //             <path
-                    //                 strokeLinecap="round"
-                    //                 strokeLinejoin="round"
-                    //                 d="m8.25 4.5 7.5 7.5-7.5 7.5"
-                    //             />
-                    //         </svg>
-                    //     </div>
-                    // ) : (
-                    //     <div className="flex items-baseline">
-                    //         <Image src="/logotext.svg" alt="logo" width={77} height={77} />
-                            
-                    //     </div>
-                    // )}
-
-// Maintain for potential additional dropdown items
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,

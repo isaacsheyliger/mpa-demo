@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full box-border">
+    <html lang="en" className="dark h-full box-border">
         <body className={`m-0 h-full box-border ${lato.className}`}>
             <div className="wrapper min-h-full box-border flex flex-col">
                 <Nav aria-label="Main Navigation" />

@@ -10,7 +10,7 @@ const images = [gallery, gallery2, gallery3, gallery4, gallery5, gallery7]
 
 export default function Page() {
     return (
-        <main className="flex flex-col grow mb-0 mt-[52px] md:mt-0 md:min-w-[60%]">
+        <main className="flex flex-col grow mb-0 md:min-w-[60%]">
             <Hero img={images} />
         </main>
     )

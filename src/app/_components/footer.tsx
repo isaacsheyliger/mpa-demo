@@ -2,7 +2,7 @@ import Link from "next/link"
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
 import { ContactForm } from './contactform';
-import yourlogo from "../../../public/yourlogotext.svg"
+import yourlogo from "../../../public/logotext.png"
 
 /**
  * Footer component that displays a logo, product links, company links, and a subscription form.
@@ -25,11 +25,11 @@ export function Footer() {
         </div>
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Logo */}
-            <div className="flex justify-center md:justify-start md:ml-12">
+            <div className="relative flex justify-center md:justify-start md:ml-12">
                 <Image 
-                className="h-16" 
+                className="" 
                 src={yourlogo} 
-                alt="Logo" 
+                alt="Logo"
                 />
             </div>
 

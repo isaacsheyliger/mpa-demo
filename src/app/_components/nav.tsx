@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 import { useMediaQuery } from "../_hooks/use-media-query"
-import yourlogo from "../../../public/yourlogotext.svg"
+import yourlogo from "../../../public/logotext.png"
 
 import {
   NavigationMenu,

@@ -95,7 +95,7 @@ export function Nav() {
                   {links.map((link, index) => {
                       return link == "Services" ? (
                           <NavigationMenuItem
-                              className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
+                              className="bold after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
                               key={link}
                           >
                               <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
@@ -114,7 +114,7 @@ export function Nav() {
                           </NavigationMenuItem>
                       ) : (
                           <NavigationMenuItem
-                              className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
+                              className="bold after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
                               key={link}
                           >
                               <Link
@@ -153,7 +153,7 @@ export function Nav() {
                     <Image className="mb-4 pl-6" src="/logotext.svg" alt="logo" width={150} height={150} />
                     {links.map((link) => (
                     <Link
-                    className="block px-2 text-left text-base font-medium border-l-2 border-white hover:border-primary active:border-primary focus:border-primary"
+                    className="block px-2 text-left text-base font-medium border-l-2 border-background hover:border-primary active:border-primary focus:border-primary"
                     href={
                         link == "Home"
                             ? "/"
@@ -187,13 +187,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-primary focus:bg-accent focus:text-accent-primary",
             className
           )}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <p className="line-clamp-2 text-sm leading-snug text-muted-primary">
             {children}
           </p>
         </a>

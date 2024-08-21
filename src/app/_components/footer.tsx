@@ -44,7 +44,7 @@ export function Footer() {
             {/* Page Links */}
             <div className="flex justify-center space-x-16">
                 <div className="">
-                    <h3 className="font-extrabold text-2xl border-b-2 mb-2">Services</h3>
+                    <h3 className="text-2xl border-b-2 mb-2">Services</h3>
                     <ul className="space-y-2">
                         <li className=""><Link href="/lawn-care" className="transition hover:text-secondary w-fit">Lawn Care</Link></li>
                         <li className=""><Link href="/tree-removal" className="transition hover:text-secondary w-fit">Tree Removal</Link></li>

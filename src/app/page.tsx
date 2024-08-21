@@ -91,7 +91,7 @@ export default function Home() {
         </div>
 
         <div className='flex flex-col my-8'>
-            <h1 className={`${serif.className} text-4xl self-center mt-4`}>Our Services</h1>
+            <h1 className={`text-4xl self-center mt-4`}>Our Services</h1>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-4 m-16'>
                 {services.map((service, index) => (
                     <Link className='flex flex-col items-center' key={index} href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>

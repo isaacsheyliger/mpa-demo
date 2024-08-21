@@ -91,22 +91,22 @@ export function Nav() {
                 </Link>
             </NavigationMenuItem>
             <NavigationMenuItem className="hidden md:flex pb-2 mx-auto list-none text-lg">
-              <NavigationMenuList>
+              <NavigationMenuList className="text-primary">
                   {links.map((link, index) => {
                       return link == "Services" ? (
                           <NavigationMenuItem
-                              className="bold after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
+                              className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
                               key={link}
                           >
                               <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
                               <NavigationMenuContent>
-                                  <ul className="w-[150px]">
+                                  <ul className="w-[150px] text-foreground space-y-0.5">
                                       {components.map((component) => (
                                           <ListItem
                                               key={component.href}
                                               title={component.title}
                                               href={component.href}
-                                              className="py-2"
+                                              className=""
                                           ></ListItem>
                                       ))}
                                   </ul>
@@ -114,7 +114,7 @@ export function Nav() {
                           </NavigationMenuItem>
                       ) : (
                           <NavigationMenuItem
-                              className="bold after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
+                              className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
                               key={link}
                           >
                               <Link
@@ -187,7 +187,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-primary focus:bg-accent focus:text-accent-primary",
+            "block select-none space-y-1 rounded-none p-3 leading-none no-underline outline-none transition-colors hover:bg-primary hover:text-background focus:bg-primary focus:text-background",
             className
           )}
           {...props}

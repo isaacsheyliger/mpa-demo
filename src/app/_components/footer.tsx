@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
-import { ContactForm } from './contactform';
 import yourlogo from "../../../public/logotext.png"
 
 /**
@@ -15,65 +14,77 @@ import yourlogo from "../../../public/logotext.png"
  */
 export function Footer() {
   return (
-    <footer className="grow-0 shrink-0 bg-green-950 text-white border-t-2 border-foreground">
-        <div className="flex flex-col self-start items-center md:items-start md:flex-row md:justify-evenly mb-8 bg-background text-primary py-16">
-            <div className="px-8 my-4 md:my-0">
-                <h2 className="text-4xl font-bold text-center">Contact Us</h2>
-                <p className="text-center">Have a question? Want to schedule a service? <br/> Send us a message!</p>
-            </div>
-            <ContactForm />
-        </div>
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Logo */}
-            <div className="relative flex justify-center md:justify-start md:ml-12">
-                <Image 
-                className="" 
-                src={yourlogo} 
-                alt="Logo"
-                />
+    <footer className="grow-0 shrink-0 bg-primary text-background">
+        <div className="p-16 flex flex-row justify-between">
+            {/* Logo & Sub */}
+            <div className="flex flex-col space-y-16">
+                <div className="relative self-start w-2/5">
+                    <Image 
+                    className="" 
+                    src={yourlogo} 
+                    alt="Logo"
+                    />
+                </div>
+                <div className="flex flex-col items-center md:items-start p-12 bg-foreground w-fit">
+                    <h3 className="font-extrabold text-lg -mb-1">Subscribe to our newsletter</h3>
+                    <p className="text-sm text-center md:text-left mb-2">Get the latest news and updates right in your inbox.</p>
+                    <form className="flex flex-row items-center">
+                        <input
+                        type="email"
+                        placeholder="Enter your email"
+                        className="px-4 py-2 mr-2 text-primary rounded"
+                        />
+                        <Button variant="outline" type="submit" className="px-4 py-2 text-primary">
+                            Subscribe
+                        </Button>
+                    </form>
+                </div>
             </div>
 
             {/* Page Links */}
-            <div className="flex justify-center md:justify-around">
-                <div className="mr-4">
-                    <h3 className="font-extrabold text-lg mb-2 md:ml-0">Product</h3>
-                    <ul>
-                        <li><a href="/services" className="">Services</a></li>
-                        <li><a href="/gallery" className="">Gallery</a></li>
-                        <li><a href="/reviews" className="">Reviews</a></li>
+            <div className="flex justify-center space-x-16">
+                <div className="">
+                    <h3 className="font-extrabold text-2xl border-b-2 mb-2">Services</h3>
+                    <ul className="space-y-2">
+                        <li className=""><Link href="/lawn-care" className="transition hover:text-secondary w-fit">Lawn Care</Link></li>
+                        <li className=""><Link href="/tree-removal" className="transition hover:text-secondary w-fit">Tree Removal</Link></li>
+                        <li className=""><Link href="/snow-removal" className="transition hover:text-secondary w-fit">Snow Removal</Link></li>
+                        <li className=""><Link href="/hardscaping" className="transition hover:text-secondary w-fit">Hardscaping</Link></li>
+                        <li className=""><Link href="/artificial-turf" className="transition hover:text-secondary w-fit">Artificial Turf</Link></li>
+                        <li className=""><Link href="/commercial" className="transition hover:text-secondary w-fit">Commercial</Link></li>
                     </ul>
                 </div>
                 <div className="ml-4 md:ml-0">
-                    <h3 className="font-extrabold text-lg mb-2">Company</h3>
-                    <ul>
-                        <li><a href="/about" className="">About Us</a></li>
-                        <li><a href="/contact" className="">Contact</a></li>
+                    <h3 className="font-extrabold text-2xl border-b-2 mb-2">Company</h3>
+                    <ul className="space-y-2">
+                        <li className=""><Link href="/about" className="transition hover:text-secondary w-fit">About Us</Link></li>
+                        <li className=""><Link href="/gallery" className="transition hover:text-secondary w-fit">Gallery</Link></li>
+                        <li className=""><Link href="/reviews" className="transition hover:text-secondary w-fit">Reviews</Link></li>
                     </ul>
+                </div>
+
+                <div className="flex flex-col self-start items-center md:items-start md:justify-evenly mb-8">
+                    <div className="my-4 md:my-0">
+                        <Link href="/contact" className="group transition hover:text-secondary"><h3 className="transition text-2xl font-bold border-b-2 mb-2 group-hover:border-secondary">Contact</h3></Link>
+                    </div>
+                    <div>
+                        <p>landscapers@company.com</p>
+                        <p>(313) 555-1234</p>
+                        <br />
+                        <p>000 Woodward Ave</p> 
+                        <p>Detroit, MI</p>
+                    </div>
                 </div>
             </div>
 
-            {/* Newsletter */}
-            <div className="flex flex-col items-center md:items-start">
-                <h3 className="font-extrabold text-lg -mb-1">Subscribe to our newsletter</h3>
-                <p className="text-sm text-center md:text-left mb-2">Get the latest news and updates right in your inbox.</p>
-                <form className="flex flex-row items-center">
-                    <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="px-4 py-2 mr-2 text-primary rounded"
-                    />
-                    <Button variant="outline" type="submit" className="px-4 py-2 text-primary">
-                        Subscribe
-                    </Button>
-                </form>
-            </div>
+            {/* Contact */}
         </div>
-        <div className="container mx-auto text-xs grid grid-cols-1 md:grid-cols-3 gap-8 py-4">
-            <div></div>
+        <div className="container mx-auto text-sm grid grid-cols-1 md:grid-cols-3 gap-8 py-4">
+            <div>Copyright 2024&#169; MB Designs, LLC</div>
             {/* Legal */}
-            <div className="flex items-center justify-center">
+            <div className="flex text-xs items-center justify-center">
                 <p>
-                    Copyright 2024 | MB Designs, LLC | <Link href="">Sitemap</Link>
+                    <Link href="">Terms & Conditions</Link> | <Link href="">Privacy</Link> | <Link href="">Support</Link>
                 </p>
             </div>
             {/* Social Links */}

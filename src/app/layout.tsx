@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import { Quattrocento } from "next/font/google";
+import { Quattrocento_Sans } from "next/font/google";
 import { Nav } from "./_components/nav";
 import { Footer } from "./_components/footer";
 import "./globals.css";
 
-const lato = Lato({ 
+const serif = Quattrocento({
+    weight: "400",
+    subsets: ["latin"],
+});
+
+const sans = Quattrocento_Sans({ 
     weight: "400",
     subsets: ["latin"] 
 });
@@ -20,8 +26,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark h-full box-border">
-        <body className={`m-0 h-full box-border ${lato.className}`}>
+    <html lang="en" className="h-full box-border">
+        <body className={`m-0 h-full box-border ${sans.className}`}>
             <div className="wrapper min-h-full box-border flex flex-col">
                 <Nav aria-label="Main Navigation" />
                 {children}

@@ -89,22 +89,24 @@ export default function Home() {
             <div className='grid grid-cols-1 md:grid-cols-3'>
                 {services.map((service, index) => (
                     <Link className='flex flex-col items-center' key={index} href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>
-                        <Card className='transition ease-in-out w-[300px] h-[300px] mt-8 hover:scale-105'>
+                        <Card className='transition ease-in-out w-[300px] h-[300px] mt-8'>
                             <Image 
-                            className='aspect-square rounded-lg' 
+                            className='absolute aspect-square rounded-lg opacity-100' 
                             src={service.img} 
                             alt={service.title} 
                             width={300} 
                             height={300} 
                             placeholder='blur'
                             />
+                            <div className='absolute z-10 transition flex flex-col items-center justify-center w-[300px] h-[300px] bg-opacity-0 opacity-0 text-primary bg-background hover:opacity-100 hover:bg-opacity-100 rounded-lg'>
+                                <p className='my-2'>{service.title}</p>
+                                <Button>
+                                    <p>
+                                        Learn More
+                                    </p>
+                                </Button>
+                            </div>
                         </Card>
-                        <p className='my-2'>{service.title}</p>
-                        <Button>
-                            <p>
-                                Learn More
-                            </p>
-                        </Button>
                     </Link>
                 ))}
             </div>

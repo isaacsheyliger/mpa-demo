@@ -194,14 +194,14 @@ export default function Home() {
 
         <div className='hidden md:flex flex-col my-16'>
             <h2 className={`text-4xl font-bold self-center`}>Customer Reviews</h2>
-            <div className={`flex flex-col self-center items-center justify-center text-center w-1/2`} role="region" aria-labelledby="blurb-title">
+            <div className={`flex flex-col self-center items-center justify-center text-center w-[55%]`} role="region" aria-labelledby="blurb-title">
                 <Carousel
                 opts={{
                     loop: true,
                     duration: 60,
                 }}
                 >
-                    <CarouselContent>
+                    <CarouselContent className=''>
                     {reviews.map((blurb, index) => (
                         <CarouselItem key={index}>
                             <div key={index} className='flex flex-col items-center my-8'>
@@ -213,7 +213,7 @@ export default function Home() {
                                         </svg>
                                     ))}
                                 </div>
-                                <p className="text-lg text-foreground h-[75px] pt-[15px]">{blurb.description}</p>
+                                <p className="text-lg text-foreground w-[80%] h-[75px] pt-[15px]">{blurb.description}</p>
                             </div>
                         </CarouselItem>
                     ))}

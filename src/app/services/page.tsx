@@ -90,7 +90,7 @@ export default function Page() {
             </div>
             <h1 className='text-4xl font-bold self-center'>Services</h1>
             <div className='flex md:hidden flex-col m-8 space-y-4'>
-                {/* map titles and descriptions to card/blurbs */}
+                {/* TODO: change to accordion */}
                 {blurbs.map((blurb, index) => (
                 <div
                 key={index}

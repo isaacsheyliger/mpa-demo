@@ -1,6 +1,11 @@
+import Link from 'next/link';
 import Image from 'next/image';
+import { Quattrocento } from 'next/font/google';
+
+import { Button } from '@/components/ui/button';
 import { Hero } from '@/app/_components/hero';
 import { Blurb } from '@/app/_components/blurb';
+
 import {
   Card,
   CardContent,
@@ -9,10 +14,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 
-import { Quattrocento } from 'next/font/google';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
 
 import lawncare from '../../public/lawn-care.jpg';
 import treeremoval3 from '../../public/tree-removal-3.jpg';
@@ -139,56 +148,82 @@ export default function Home() {
 
         <div className='flex md:hidden flex-col'>
             {/* map titles and descriptions to card/blurbs */}
-            {reviews.map((blurb, index) => (
-            <div
-            key={index} 
-            className='self-center max-w-[80%]'
+            <Carousel
+            opts={{
+                loop: true,
+                duration: 60,
+            }}
             >
-                <Card className='my-2'>
-                    <CardHeader className='px-6 pt-6 pb-4'>
-                        <CardTitle>{blurb.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent className='flex flex-col'>
-                        <div className="flex pb-4">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                                <svg key={star} className={`w-4 h-4 fill-current ${star <= blurb.rating ? "text-yellow-500" : "text-gray-300"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 2l2.121 6.485 6.879.502-5.281 4.854 1.562 6.875-6.281-4.063-6.281 4.063 1.562-6.875-5.281-4.854 6.879-.502z" />
-                                </svg>
-                            ))}
+                <CarouselContent>
+                {reviews.map((blurb, index) => (
+                    <CarouselItem key={index} className='flex justify-center'>
+                        <div
+                        key={index} 
+                        className='self-center max-w-[80%]'
+                        >
+                            <Card className='flex flex-col my-2 items-center shadow-gray-500'>
+                                <CardHeader className='px-6 pt-6 pb-4'>
+                                    <CardTitle>{blurb.title}</CardTitle>
+                                </CardHeader>
+                                <CardContent className='flex flex-col items-center'>
+                                    <div className="flex pb-4">
+                                        {[1, 2, 3, 4, 5].map((star) => (
+                                            <svg key={star} className={`w-4 h-4 fill-current ${star <= blurb.rating ? "text-yellow-500" : "text-gray-300"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M12 2l2.121 6.485 6.879.502-5.281 4.854 1.562 6.875-6.281-4.063-6.281 4.063 1.562-6.875-5.281-4.854 6.879-.502z" />
+                                            </svg>
+                                        ))}
+                                    </div>
+                                    <CardDescription className="text-foreground text-center">{blurb.description}</CardDescription>
+                                </CardContent>
+                                <CardFooter>
+                                    <Button>
+                                        <Link href='/reviews'>
+                                            See More
+                                        </Link>
+                                    </Button>
+                                </CardFooter>
+                            </Card> 
                         </div>
-                        <CardDescription className="text-foreground">{blurb.description}</CardDescription>
-                    </CardContent>
-                    <CardFooter>
-                        <Button>
-                            <Link href='/reviews'>
-                                Learn More
-                            </Link>
-                        </Button>
-                    </CardFooter>
-                </Card> 
-            </div>
-            ))}
+                    </CarouselItem>
+                ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+            </Carousel>
         </div>
 
         <div className='hidden md:flex flex-col my-16'>
             <h2 className={`text-4xl font-bold self-center`}>Customer Reviews</h2>
             <div className={`flex flex-col self-center items-center justify-center text-center w-1/2`} role="region" aria-labelledby="blurb-title">
-                {reviews.map((blurb, index) => (
-                    <div key={index} className='flex flex-col items-center my-8'>
-                        <h2 className="text-2xl mb-2">{blurb.title}</h2>
-                        <div className="flex">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                                <svg key={star} className={`w-4 h-4 fill-current ${star <= blurb.rating ? "text-yellow-500" : "text-gray-300"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M12 2l2.121 6.485 6.879.502-5.281 4.854 1.562 6.875-6.281-4.063-6.281 4.063 1.562-6.875-5.281-4.854 6.879-.502z" />
-                                </svg>
-                            ))}
-                        </div>
-                        <p className="text-lg text-foreground">{blurb.description}</p>
-                    </div>
+                <Carousel
+                opts={{
+                    loop: true,
+                    duration: 60,
+                }}
+                >
+                    <CarouselContent>
+                    {reviews.map((blurb, index) => (
+                        <CarouselItem key={index}>
+                            <div key={index} className='flex flex-col items-center my-8'>
+                                <h2 className="text-2xl mb-2">{blurb.title}</h2>
+                                <div className="flex">
+                                    {[1, 2, 3, 4, 5].map((star) => (
+                                        <svg key={star} className={`w-4 h-4 fill-current ${star <= blurb.rating ? "text-yellow-500" : "text-gray-300"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M12 2l2.121 6.485 6.879.502-5.281 4.854 1.562 6.875-6.281-4.063-6.281 4.063 1.562-6.875-5.281-4.854 6.879-.502z" />
+                                        </svg>
+                                    ))}
+                                </div>
+                                <p className="text-lg text-foreground h-[75px] pt-[15px]">{blurb.description}</p>
+                            </div>
+                        </CarouselItem>
                     ))}
-                    <Button className="w-24 mt-4">
-                        <Link href='/reviews'>See More</Link>
-                    </Button>
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                </Carousel>
+                <Button className="w-24 mt-4">
+                    <Link href='/reviews'>See More</Link>
+                </Button>
             </div>
         </div>
     </main>

@@ -80,58 +80,63 @@ export function Nav() {
     return (
         isDesktop ? (
         <NavigationMenu>
-            <NavigationMenuItem className="hidden md:flex list-none">
+            <NavigationMenuItem className="hidden md:flex list-none w-[200px] ml-8 mt-2">
                 <Link href="/" legacyBehavior passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <Image src={yourlogo} alt="logo" width={150} height={150} />
+                    <NavigationMenuLink>
+                        <Image 
+                        src={yourlogo} 
+                        alt="logo"
+                        />
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
-            <NavigationMenuList className="hidden md:flex pb-2">
-                {links.map((link, index) => {
-                    return link == "Services" ? (
-                        <NavigationMenuItem
-                            className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
-                            key={link}
-                        >
-                            <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                                <ul className="w-[150px]">
-                                    {components.map((component) => (
-                                        <ListItem
-                                            key={component.href}
-                                            title={component.title}
-                                            href={component.href}
-                                            className="py-2"
-                                        ></ListItem>
-                                    ))}
-                                </ul>
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
-                    ) : (
-                        <NavigationMenuItem
-                            className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
-                            key={link}
-                        >
-                            <Link
-                                href={
-                                    link == "Home"
-                                        ? "/"
-                                        : link == "About Us"
-                                        ? "/about"
-                                        : `/${link.toLowerCase()}`
-                                }
-                                legacyBehavior
-                                passHref
-                            >
-                                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                                    {link}
-                                </NavigationMenuLink>
-                            </Link>
-                        </NavigationMenuItem>
-                    );
-                })}
-            </NavigationMenuList>
+            <NavigationMenuItem className="hidden md:flex pb-2 mx-auto list-none text-lg">
+              <NavigationMenuList>
+                  {links.map((link, index) => {
+                      return link == "Services" ? (
+                          <NavigationMenuItem
+                              className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
+                              key={link}
+                          >
+                              <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
+                              <NavigationMenuContent>
+                                  <ul className="w-[150px]">
+                                      {components.map((component) => (
+                                          <ListItem
+                                              key={component.href}
+                                              title={component.title}
+                                              href={component.href}
+                                              className="py-2"
+                                          ></ListItem>
+                                      ))}
+                                  </ul>
+                              </NavigationMenuContent>
+                          </NavigationMenuItem>
+                      ) : (
+                          <NavigationMenuItem
+                              className="after:duration-500 ease-out after:block after:h-0.5 after:w-full after:origin-bottom-right after:scale-x-0 after:bg-primary after:transition-transform after:hover:origin-bottom-left after:hover:scale-x-100"
+                              key={link}
+                          >
+                              <Link
+                                  href={
+                                      link == "Home"
+                                          ? "/"
+                                          : link == "About Us"
+                                          ? "/about"
+                                          : `/${link.toLowerCase()}`
+                                  }
+                                  legacyBehavior
+                                  passHref
+                              >
+                                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                                      {link}
+                                  </NavigationMenuLink>
+                              </Link>
+                          </NavigationMenuItem>
+                      );
+                  })}
+              </NavigationMenuList>
+            </NavigationMenuItem>
         </NavigationMenu>
         ) : (
         <div className="h-[56px]">

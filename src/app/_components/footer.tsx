@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image";
 import { Button } from "@/components/ui/button"
+import { ContactForm } from './contactform';
 import yourlogo from "../../../public/yourlogotext.svg"
 
 /**
@@ -14,7 +15,14 @@ import yourlogo from "../../../public/yourlogotext.svg"
  */
 export function Footer() {
   return (
-    <footer className="grow-0 shrink-0 bg-green-950 text-white pt-10">
+    <footer className="grow-0 shrink-0 bg-green-950 text-white border-t-2 border-foreground">
+        <div className="flex flex-col self-start items-center md:items-start md:flex-row md:justify-evenly mb-8 bg-background text-primary py-16">
+            <div className="px-8 my-4 md:my-0">
+                <h2 className="text-4xl font-bold text-center">Contact Us</h2>
+                <p className="text-center">Have a question? Want to schedule a service? <br/> Send us a message!</p>
+            </div>
+            <ContactForm />
+        </div>
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Logo */}
             <div className="flex justify-center md:justify-start md:ml-12">

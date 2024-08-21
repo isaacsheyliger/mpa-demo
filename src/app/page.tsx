@@ -97,13 +97,13 @@ export default function Home() {
                     <Link className='flex flex-col items-center' key={index} href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>
                         <Card className='relative transition ease-in-out w-full h-[275px]'>
                             <Image 
-                            className='absolute rounded-lg opacity-100' 
+                            className='absolute rounded-md opacity-100' 
                             src={service.img} 
                             alt={service.title} 
                             fill
                             placeholder='blur'
                             />
-                            <div className='absolute z-10 transition flex flex-col text-center items-center justify-center w-full h-[275px] bg-opacity-0 opacity-0 text-primary bg-background hover:opacity-100 hover:bg-opacity-100 rounded-lg'>
+                            <div className='absolute z-10 transition flex flex-col text-center items-center justify-center w-full h-[275px] bg-opacity-0 opacity-0 text-primary bg-background hover:opacity-100 hover:bg-opacity-100 rounded-md'>
                                 <p className={`${serif.className} text-xl my-2`}>{service.title}</p>
                                 <p className='text-sm text-foreground mx-12'>
                                     Do consectetur proident proident id eiusmod deserunt consequat

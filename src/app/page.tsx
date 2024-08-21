@@ -129,7 +129,7 @@ export default function Home() {
                 />
             </div>
             <h1 className='text-4xl font-bold self-center mt-4'>About Us</h1>
-            <p className='max-w-[70%] my-8'>We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.</p>
+            <p className='max-w-[70%] my-8 text-foreground'>We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.</p>
             <Button>
                 <Link href='/about'>
                     Learn More
@@ -156,7 +156,7 @@ export default function Home() {
                                 </svg>
                             ))}
                         </div>
-                        <CardDescription>{blurb.description}</CardDescription>
+                        <CardDescription className="text-foreground">{blurb.description}</CardDescription>
                     </CardContent>
                     <CardFooter>
                         <Button>
@@ -171,11 +171,11 @@ export default function Home() {
         </div>
 
         <div className='hidden md:flex flex-col my-16'>
-            <h2 className={`${serif.className} text-4xl font-bold self-center`}>Customer Reviews</h2>
+            <h2 className={`text-4xl font-bold self-center`}>Customer Reviews</h2>
             <div className={`flex flex-col self-center items-center justify-center text-center w-1/2`} role="region" aria-labelledby="blurb-title">
                 {reviews.map((blurb, index) => (
                     <div key={index} className='flex flex-col items-center my-8'>
-                        <h2 className="text-2xl font-bold mb-2">{blurb.title}</h2>
+                        <h2 className="text-2xl mb-2">{blurb.title}</h2>
                         <div className="flex">
                             {[1, 2, 3, 4, 5].map((star) => (
                                 <svg key={star} className={`w-4 h-4 fill-current ${star <= blurb.rating ? "text-yellow-500" : "text-gray-300"}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -183,7 +183,7 @@ export default function Home() {
                                 </svg>
                             ))}
                         </div>
-                        <p className="text-lg">{blurb.description}</p>
+                        <p className="text-lg text-foreground">{blurb.description}</p>
                     </div>
                     ))}
                     <Button className="w-24 mt-4">

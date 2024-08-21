@@ -36,8 +36,8 @@ export function Blurb({
                 />
             </div>
             <div className="w-1/2 p-8 flex flex-col justify-center">
-                <h2 className="text-2xl font-bold mb-2">{title}</h2>
-                <p className="text-lg">{description}</p>
+                <h2 className="text-2xl mb-2">{title}</h2>
+                <p className="text-lg text-foreground">{description}</p>
                 <Button className="w-24 mt-4">
                     <Link href={href}>See More</Link>
                 </Button>

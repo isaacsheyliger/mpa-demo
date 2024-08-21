@@ -13,6 +13,8 @@ import { Button } from '@/components/ui/button';
 import { ContactForm } from './_components/contactform';
 import Link from 'next/link';
 
+import { Quattrocento } from 'next/font/google';
+
 import lawncare from '../../public/lawn-care.jpg';
 import treeremoval3 from '../../public/tree-removal-3.jpg';
 import snowremoval from '../../public/snow-removal.jpg';
@@ -25,6 +27,11 @@ import gallery6 from '../../public/gallery-6.jpg';
 import stock2 from '../../public/stock-2.jpg';
 import hardscaping from '../../public/hardscaping-2.jpg';
 import snowremoval4 from '../../public/snow-removal-4.jpg';
+
+const serif = Quattrocento({
+    weight: "700",
+    subsets: ["latin"],
+});
 
 const services = [
     {
@@ -79,32 +86,29 @@ const reviews = [
 
 export default function Home() {
   return (
-    <main className="flex flex-col grow mb-4">
+    <main className="text-primary flex flex-col grow mb-4">
         <div>
             <Hero />
         </div>
 
         <div className='flex flex-col my-8'>
-            <h1 className='text-4xl font-bold self-center mt-4'>Our Services</h1>
-            <div className='grid grid-cols-1 md:grid-cols-3'>
+            <h1 className={`${serif.className} text-4xl self-center mt-4`}>Our Services</h1>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 m-16'>
                 {services.map((service, index) => (
                     <Link className='flex flex-col items-center' key={index} href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>
-                        <Card className='transition ease-in-out w-[300px] h-[300px] mt-8'>
+                        <Card className='relative transition ease-in-out w-full h-[275px]'>
                             <Image 
-                            className='absolute aspect-square rounded-lg opacity-100' 
+                            className='absolute rounded-lg opacity-100' 
                             src={service.img} 
                             alt={service.title} 
-                            width={300} 
-                            height={300} 
+                            fill
                             placeholder='blur'
                             />
-                            <div className='absolute z-10 transition flex flex-col items-center justify-center w-[300px] h-[300px] bg-opacity-0 opacity-0 text-primary bg-background hover:opacity-100 hover:bg-opacity-100 rounded-lg'>
-                                <p className='my-2'>{service.title}</p>
-                                <Button>
-                                    <p>
-                                        Learn More
-                                    </p>
-                                </Button>
+                            <div className='absolute z-10 transition flex flex-col text-center items-center justify-center w-full h-[275px] bg-opacity-0 opacity-0 text-primary bg-background hover:opacity-100 hover:bg-opacity-100 rounded-lg'>
+                                <p className={`${serif.className} text-xl my-2`}>{service.title}</p>
+                                <p className='text-sm text-foreground mx-12'>
+                                    Do consectetur proident proident id eiusmod deserunt consequat
+                                </p>
                             </div>
                         </Card>
                     </Link>

@@ -14,7 +14,7 @@ export default function Page() {
                 <Hero />
             </div>
             <div className='flex flex-col m-auto items-center'>
-                <h1 className='text-4xl font-bold'>About Us</h1>
+                <h1 className='text-4xl'>About Us</h1>
                 <p className='max-w-[70%] my-8'>{detail}</p>
             </div>
         </main>

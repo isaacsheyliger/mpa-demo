@@ -97,14 +97,14 @@ export default function Page() {
             <div className='mb-8'>
                 <Hero img={images} />
             </div>
-            <h1 className='text-4xl font-bold self-center'>Services</h1>
+            <h1 className='text-4xl self-center'>Services</h1>
             <Accordion type='single' className='flex flex-col self-center py-8 px-16 space-y-4 w-[90%] bg-background' collapsible>
                 {blurbs.map((blurb, index) => (
                 <div
                 key={index}
                 >
-                    <AccordionItem value={`${blurb.title}`} className="border-primary text-foreground">
-                        <AccordionTrigger className='flex justify-between bold px-2'>{blurb.title}</AccordionTrigger>
+                    <AccordionItem value={`${blurb.title}`} className="border-primary">
+                        <AccordionTrigger className='flex justify-between bold text-foreground text-md px-2'>{blurb.title}</AccordionTrigger>
                         <AccordionContent className='flex flex-col items-center space-y-8 px-2'>
                             <Image src={blurb.img} alt={blurb.title} className='' />
                             <p className=''>{blurb.description}</p>

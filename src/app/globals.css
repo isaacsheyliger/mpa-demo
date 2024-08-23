@@ -90,4 +90,5 @@ html, .sans {
 
 h1, h2, h3, h4, h5, h6, .serif-bold {
   font-family: var(--font-serif-bold);
+  color: hsl(var(--primary));
 }

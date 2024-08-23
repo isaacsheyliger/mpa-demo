@@ -29,43 +29,7 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer"
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Lawn Care",
-    href: "/services/lawn-care",
-    description:
-      "",
-  },
-  {
-    title: "Tree Removal",
-    href: "/services/tree-removal",
-    description:
-      "",
-  },
-  {
-    title: "Snow Removal",
-    href: "/services/snow-removal",
-    description:
-      "",
-  },{
-    title: "Hardscaping",
-    href: "/services/hardscaping",
-    description:
-      "",
-  },
-  {
-    title: "Artificial Turf",
-    href: "/services/artificial-turf",
-    description:
-      "",
-  },
-  {
-    title: "Commercial",
-    href: "/services/commercial",
-    description:
-      "",
-  },
-]
+import { services } from "../services/services"
 
 const links = ["Home", "About Us", "Services", "Gallery", "Contact"]
 
@@ -101,11 +65,11 @@ export function Nav() {
                               <NavigationMenuTrigger>{link}</NavigationMenuTrigger>
                               <NavigationMenuContent>
                                   <ul className="w-[150px] text-foreground space-y-0.5">
-                                      {components.map((component) => (
+                                      {services.map((service) => (
                                           <ListItem
-                                              key={component.href}
-                                              title={component.title}
-                                              href={component.href}
+                                              key={service.href}
+                                              title={service.title}
+                                              href={service.href}
                                               className=""
                                           ></ListItem>
                                       ))}

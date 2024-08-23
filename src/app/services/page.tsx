@@ -2,15 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Metadata } from 'next';
 import { Hero } from '@/app/_components/hero';
-import { Blurb } from '@/app/_components/blurb';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import { Button } from '@/components/ui/button';
 
 import {

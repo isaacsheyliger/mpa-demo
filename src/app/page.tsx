@@ -29,6 +29,8 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 
+import { services } from './services/services';
+
 import lawncare from '../../public/lawn-care.jpg';
 import treeremoval3 from '../../public/tree-removal-3.jpg';
 import snowremoval from '../../public/snow-removal.jpg';
@@ -46,33 +48,6 @@ const serif = Quattrocento({
     weight: "700",
     subsets: ["latin"],
 });
-
-const services = [
-    {
-        title: "Lawn Care",
-        img: lawncare,
-    },
-    {
-        title: "Tree Removal",
-        img: treeremoval3,
-    },
-    {
-        title: "Snow Removal",
-        img: snowremoval,
-    },
-    {
-        title: "Hardscaping",
-        img: hardscaping2,
-    },
-    {
-        title: "Artificial Turf",
-        img: artificialturf,
-    },
-    {
-        title: "Commercial",
-        img: commercial,
-    },
-]
 
 const reviews = [
     {
@@ -105,9 +80,9 @@ export default function Home() {
             <Hero />
         </div>
 
-        <div className='flex flex-col my-8'>
-            <h1 className={`text-4xl self-center mt-4`}>Our Services</h1>
-            <div className='hidden md:flex grid grid-cols-1 md:grid-cols-3 gap-4 m-16'>
+        <div className={`flex flex-col my-8`}>
+            <h1 className={`text-4xl text-center self-center bg-background`}>Our Services</h1>
+            <div className='hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 m-16'>
                 {services.map((service, index) => (
                     <Link className='flex flex-col items-center' key={index} href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>
                         <Card className='relative transition ease-in-out w-full h-[275px]'>
@@ -130,18 +105,18 @@ export default function Home() {
             </div>
             
             <Accordion type='single' className='flex md:hidden flex-col self-center py-8 px-16 space-y-4 w-[90%] bg-background' collapsible>
-                {blurbs.map((blurb, index) => (
+                {services.map((service, index) => (
                 <div
                 key={index}
                 >
-                    <AccordionItem value={`${blurb.title}`} className="border-primary">
-                        <AccordionTrigger className='flex justify-between bold text-foreground text-md px-2'>{blurb.title}</AccordionTrigger>
+                    <AccordionItem value={`${service.title}`} className="border-primary">
+                        <AccordionTrigger className='flex justify-between bold text-foreground text-md px-2'>{service.title}</AccordionTrigger>
                         <AccordionContent className='flex flex-col items-center space-y-8 px-2'>
-                            <Image src={blurb.img} alt={blurb.title} className='' />
-                            <p className=''>{blurb.description}</p>
+                            <Image src={service.img} alt={service.title} className='' />
+                            <p className=''>{service.description}</p>
 
                             <Button className='w-24'>
-                                <Link href={blurb.href}>
+                                <Link href={service.href}>
                                     Learn More
                                 </Link> 
                             </Button>

@@ -44,7 +44,7 @@ export function Footer() {
             {/* Page Links */}
             <div className="flex justify-center md:space-x-8 lg:space-x-16">
                 <div className="hidden md:block">
-                    <h3 className="text-2xl border-b-2 mb-2">Services</h3>
+                    <h3 className="text-2xl text-background border-b-2 mb-2">Services</h3>
                     <ul className="space-y-2">
                         <li className=""><Link href="/lawn-care" className="transition hover:text-secondary w-fit">Lawn Care</Link></li>
                         <li className=""><Link href="/tree-removal" className="transition hover:text-secondary w-fit">Tree Removal</Link></li>
@@ -55,7 +55,7 @@ export function Footer() {
                     </ul>
                 </div>
                 <div className="ml-4 md:ml-0 hidden md:block">
-                    <h3 className="font-extrabold text-2xl border-b-2 mb-2">Company</h3>
+                    <h3 className="text-2xl text-background border-b-2 mb-2">Company</h3>
                     <ul className="space-y-2">
                         <li className=""><Link href="/about" className="transition hover:text-secondary w-fit">About Us</Link></li>
                         <li className=""><Link href="/gallery" className="transition hover:text-secondary w-fit">Gallery</Link></li>

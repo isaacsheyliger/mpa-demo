@@ -124,8 +124,18 @@ export default function Home() {
             </div>
         </div>
 
-        <div className='hidden md:flex items-center justify-center max-h-[300px] mt-8'>
-            <Blurb title='About Us' description='We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.' href='/about' img={gallery6} orientation={false} /> 
+        <div className={`hidden md:flex items-center justify-end h-[1000px] mt-8 bg-fixed bg-center bg-no-repeat bg-cover bg-[url(../../public/gallery-6.jpg)]`}>
+            <div className='flex justify-center items-center w-1/2 h-2/5 bg-background'>
+                <div className='flex flex-col items-center w-1/2'>
+                    <h1 className='text-4xl w-fit'>About Us</h1>
+                    <p className='w-fit my-8 text-foreground text-center'>We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.</p>
+                    <Button className='w-24'>
+                        <Link href='/about'>
+                            Learn More
+                        </Link>
+                    </Button>
+                </div>
+            </div>
         </div>
         <div className='flex flex-col md:hidden items-center justify-center my-8'>
             <div className='relative w-full aspect-[4/3]'>

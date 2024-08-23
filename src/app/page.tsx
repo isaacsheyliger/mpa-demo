@@ -124,7 +124,7 @@ export default function Home() {
             </div>
         </div>
 
-        <div className={`hidden md:flex items-center justify-end h-[1000px] mt-8 bg-fixed bg-center bg-no-repeat bg-cover bg-[url(../../public/gallery-6.jpg)]`}>
+        <div className={`flex items-center justify-end h-[1000px] mt-8 bg-fixed bg-center bg-no-repeat bg-cover bg-[url(../../public/gallery-6.jpg)]`}>
             <div className='flex justify-center items-center w-1/2 h-2/5 bg-background'>
                 <div className='flex flex-col items-center w-1/2'>
                     <h1 className='text-4xl w-fit'>About Us</h1>
@@ -137,32 +137,15 @@ export default function Home() {
                 </div>
             </div>
         </div>
-        <div className='flex flex-col md:hidden items-center justify-center my-8'>
-            <div className='relative w-full aspect-[4/3]'>
-                <Image 
-                src={gallery6} 
-                alt='About Us' 
-                fill 
-                style={{ objectFit: 'cover' }}                
-                placeholder='blur'
-                />
-            </div>
-            <h1 className='text-4xl font-bold self-center mt-4'>About Us</h1>
-            <p className='max-w-[70%] my-8 text-foreground'>We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.</p>
-            <Button>
-                <Link href='/about'>
-                    Learn More
-                </Link>
-            </Button>
-        </div>
 
-        <div className='flex md:hidden flex-col'>
-            {/* map titles and descriptions to card/blurbs */}
+        <div className='flex md:hidden flex-col w-[80%] md:w-full self-center my-16'>
+            <h2 className={`text-4xl font-bold self-center mb-8`}>Customer Reviews</h2>
             <Carousel
             opts={{
                 loop: true,
                 duration: 60,
             }}
+            className=''
             >
                 <CarouselContent>
                 {reviews.map((blurb, index) => (

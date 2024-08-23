@@ -15,26 +15,26 @@ import yourlogo from "../../../public/logotext.png"
 export function Footer() {
   return (
     <footer className="grow-0 shrink-0 bg-primary text-background">
-        <div className="p-16 flex flex-row justify-between">
+        <div className="p-8 md:p-16 flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
             {/* Logo & Sub */}
-            <div className="flex flex-col space-y-16">
-                <div className="relative self-start w-2/5">
+            <div className="flex flex-col items-center md:items-start space-y-8 md:space-y-16">
+                <div className="relative self-center md:self-start w-2/5">
                     <Image 
                     className="" 
                     src={yourlogo} 
                     alt="Logo"
                     />
                 </div>
-                <div className="flex flex-col items-center md:items-start p-12 bg-foreground w-fit">
-                    <h3 className="font-extrabold text-lg -mb-1">Subscribe to our newsletter</h3>
+                <div className="flex flex-col items-center md:items-start p-0 lg:p-12 lg:bg-foreground w-fit">
+                    <h3 className="text-lg -mb-1">Subscribe to our newsletter</h3>
                     <p className="text-sm text-center md:text-left mb-2">Get the latest news and updates right in your inbox.</p>
-                    <form className="flex flex-row items-center">
+                    <form className="flex flex-col lg:flex-row items-center">
                         <input
                         type="email"
                         placeholder="Enter your email"
                         className="px-4 py-2 mr-2 text-primary rounded"
                         />
-                        <Button variant="outline" type="submit" className="px-4 py-2 text-primary">
+                        <Button variant="outline" type="submit" className="px-4 py-2 mt-4 lg:mt-0 text-primary">
                             Subscribe
                         </Button>
                     </form>
@@ -42,8 +42,8 @@ export function Footer() {
             </div>
 
             {/* Page Links */}
-            <div className="flex justify-center space-x-16">
-                <div className="">
+            <div className="flex justify-center md:space-x-8 lg:space-x-16">
+                <div className="hidden md:block">
                     <h3 className="text-2xl border-b-2 mb-2">Services</h3>
                     <ul className="space-y-2">
                         <li className=""><Link href="/lawn-care" className="transition hover:text-secondary w-fit">Lawn Care</Link></li>
@@ -54,7 +54,7 @@ export function Footer() {
                         <li className=""><Link href="/commercial" className="transition hover:text-secondary w-fit">Commercial</Link></li>
                     </ul>
                 </div>
-                <div className="ml-4 md:ml-0">
+                <div className="ml-4 md:ml-0 hidden md:block">
                     <h3 className="font-extrabold text-2xl border-b-2 mb-2">Company</h3>
                     <ul className="space-y-2">
                         <li className=""><Link href="/about" className="transition hover:text-secondary w-fit">About Us</Link></li>
@@ -63,7 +63,7 @@ export function Footer() {
                     </ul>
                 </div>
 
-                <div className="flex flex-col self-start items-center md:items-start md:justify-evenly mb-8">
+                <div className="flex flex-col self-start items-center md:items-start md:justify-evenly md:mb-8">
                     <div className="my-4 md:my-0">
                         <Link href="/contact" className="group transition hover:text-secondary"><h3 className="transition text-2xl font-bold border-b-2 mb-2 group-hover:border-secondary">Contact</h3></Link>
                     </div>
@@ -80,7 +80,7 @@ export function Footer() {
             {/* Contact */}
         </div>
         <div className="container mx-auto text-sm grid grid-cols-1 md:grid-cols-3 gap-8 py-4">
-            <div>Copyright 2024&#169; MB Designs, LLC</div>
+            <div className="text-center md:text-start">Copyright 2024&#169; MB Designs, LLC</div>
             {/* Legal */}
             <div className="flex text-xs items-center justify-center">
                 <p>

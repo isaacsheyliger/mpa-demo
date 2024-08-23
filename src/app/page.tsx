@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Quattrocento } from 'next/font/google';
 
 import { Button } from '@/components/ui/button';
 import { Hero } from '@/app/_components/hero';
@@ -31,45 +30,24 @@ import {
 
 import { services } from './services/services';
 
-import lawncare from '../../public/lawn-care.jpg';
-import treeremoval3 from '../../public/tree-removal-3.jpg';
-import snowremoval from '../../public/snow-removal.jpg';
-import hardscaping2 from '../../public/hardscaping.jpg';
-import artificialturf from '../../public/artificial-turf.jpg';
-import commercial from '../../public/commercial-3.jpg';
-
-import gallery6 from '../../public/gallery-6.jpg';
-
-import stock2 from '../../public/stock-2.jpg';
-import hardscaping from '../../public/hardscaping-2.jpg';
-import snowremoval4 from '../../public/snow-removal-4.jpg';
-
-const serif = Quattrocento({
-    weight: "700",
-    subsets: ["latin"],
-});
-
 const reviews = [
     {
       title: "John Doe",
       rating: 5,
       description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
       href: "/reviews",
-      img: stock2,
     },
     {
         title: "Jane Doe",
         rating: 5,
         description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
         href: "/reviews",
-        img: hardscaping,
     },
     {
         title: "Juan Doe",
         rating: 5,
         description: "Do consectetur proident proident id eiusmod deserunt consequat pariatur ad ex velit do Lorem reprehenderit.",
         href: "/reviews",
-        img: snowremoval4,
     },
 ]
 
@@ -94,7 +72,7 @@ export default function Home() {
                             placeholder='blur'
                             />
                             <div className='absolute z-10 transition flex flex-col text-center items-center justify-center w-full h-[275px] bg-opacity-0 opacity-0 text-primary bg-background hover:opacity-100 hover:bg-opacity-100 rounded-md'>
-                                <p className={`${serif.className} text-xl my-2`}>{service.title}</p>
+                                <p className={`serif-bold text-xl my-2`}>{service.title}</p>
                                 <p className='text-sm text-foreground mx-12'>
                                     Do consectetur proident proident id eiusmod deserunt consequat
                                 </p>

@@ -61,7 +61,7 @@ export default function Home() {
             if (nextButtonRef.current) {
                 nextButtonRef.current.click();
             }
-        }, 10000);
+        }, 15000);
 
         return () => {
             clearInterval(interval);

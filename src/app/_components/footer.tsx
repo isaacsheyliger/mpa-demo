@@ -65,7 +65,7 @@ export function Footer() {
 
                 <div className="flex flex-col self-start items-center md:items-start md:justify-evenly md:mb-8">
                     <div className="my-4 md:my-0">
-                        <Link href="/contact" className="group transition hover:text-secondary"><h3 className="transition text-2xl font-bold border-b-2 mb-2 group-hover:border-secondary">Contact</h3></Link>
+                        <Link href="/contact" className="group"><h3 className="transition text-2xl text-background hover:text-secondary border-b-2 mb-2">Contact</h3></Link>
                     </div>
                     <div>
                         <p>landscapers@company.com</p>

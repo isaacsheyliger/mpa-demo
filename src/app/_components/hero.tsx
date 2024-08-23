@@ -20,7 +20,7 @@ import stock4 from '../../../public/stock-4.jpg';
  * @param img A string that provides the image src for the hero cover
  * @returns {JSX.Element} The rendered component
  */
-export function Hero({ className, img }: {className?: string, img?: StaticImageData[] | string[]}) {
+export function Hero({ className, img, height }: {className?: string, img?: StaticImageData[] | string[], height?: number}) {
     const nextButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
@@ -40,13 +40,13 @@ export function Hero({ className, img }: {className?: string, img?: StaticImageD
     }
 
     return (
-        <div className={className ? `${className} ` : "" + "flex-col items-center justify-center mb-8bg-white text-black w-full"}>
+        <div className={className ? `${className} ` : "" + "flex-col items-center justify-center mb-8 bg-white text-black w-full"}>
             <div className="relative w-full">
                 {/* Make this a carousel of images */}
                 <Carousel opts={{loop: true}}>
                     <CarouselContent>
                         {img.map((image, index) => (
-                        <CarouselItem key={index} className='relative w-full aspect-square md:aspect-[2/1] max-h-[500px]'>
+                        <CarouselItem key={index} className={`relative w-full aspect-square md:aspect-[2/1] max-h-[${height}px]`}>
                             <div>
                                 <Image 
                                 src={image} 

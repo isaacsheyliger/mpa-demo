@@ -76,7 +76,7 @@
 }
 
 /* FONTS */
-html {
+html, .sans {
   font-family: var(--font-sans);
 }
 
@@ -84,6 +84,10 @@ html {
   font-family: var(--font-sans-bold);
 }
 
-h1, h2, h3, h4, h5, h6 {
+.serif {
+  font-family: var(--font-serif);
+}
+
+h1, h2, h3, h4, h5, h6, .serif-bold {
   font-family: var(--font-serif-bold);
 }

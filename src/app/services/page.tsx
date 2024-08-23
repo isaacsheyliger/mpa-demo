@@ -11,6 +11,14 @@ import {
 } from "@/components/ui/card"
 import { Button } from '@/components/ui/button';
 
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
+  
+
 import stock from '../../../public/stock.jpg';
 import treeremoval from '../../../public/tree-removal.jpg';
 import snowremoval2 from '../../../public/snow-removal-2.jpg';
@@ -23,6 +31,7 @@ import snowremoval3 from '../../../public/snow-removal-3.jpg';
 import hardscaping3 from '../../../public/hardscaping-3.jpg';
 import commercial2 from '../../../public/commercial-2.jpg';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
     title: `Services | Contractor Demo Site`,
@@ -89,38 +98,27 @@ export default function Page() {
                 <Hero img={images} />
             </div>
             <h1 className='text-4xl font-bold self-center'>Services</h1>
-            <div className='flex md:hidden flex-col m-8 space-y-4'>
-                {/* TODO: change to accordion */}
+            <Accordion type='single' className='flex flex-col m-8 space-y-4' collapsible>
                 {blurbs.map((blurb, index) => (
                 <div
                 key={index}
                 >
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>{blurb.title}</CardTitle>
-                            <CardDescription>{blurb.description}</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <Button>
+                    <AccordionItem value={`${blurb.title}`} className="border-primary text-foreground">
+                        <AccordionTrigger className='flex justify-between bold'>{blurb.title}</AccordionTrigger>
+                        <AccordionContent className='flex flex-col items-center space-y-8'>
+                            <Image src={blurb.img} alt={blurb.title} className='max-w-[500px]' />
+                            <p className='mt-'>{blurb.description}</p>
+
+                            <Button className='w-24'>
                                 <Link href={blurb.href}>
                                     Learn More
                                 </Link> 
                             </Button>
-                        </CardContent>
-                    </Card> 
+                        </AccordionContent>
+                    </AccordionItem>
                 </div>
                 ))}
-            </div>
-            <div className='hidden md:flex flex-col my-8'>
-                {blurbs.map((blurb, index) => (
-                <div
-                key={index}
-                className='flex items-center justify-center max-h-[300px] my-1'
-                >
-                    <Blurb className="border border-black rounded-lg" title={blurb.title} description={blurb.description} href={blurb.href} orientation={index % 2 == 0 ? false : true} img={blurb.img} />
-                </div>
-                ))}
-            </div>
+            </Accordion>
         </main>
     )
 }

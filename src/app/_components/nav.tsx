@@ -149,11 +149,11 @@ export function Nav() {
 
                 </DrawerTrigger>
                 <DrawerTitle className="sr-only">Main Menu</DrawerTitle>
-                <DrawerContent className="space-y-2 pt-8">
+                <DrawerContent className="space-y-2 pt-8 bg-primary border-primary text-background">
                     <Image className="mb-4 pl-6" src="/logotext.svg" alt="logo" width={150} height={150} />
                     {links.map((link) => (
                     <Link
-                    className="block px-2 text-left text-base font-medium border-l-2 border-background hover:border-primary active:border-primary focus:border-primary"
+                    className="block px-2 text-left text-base font-medium border-l-2 border-primary hover:border-background active:border-background focus:border-background"
                     href={
                         link == "Home"
                             ? "/"
@@ -165,7 +165,7 @@ export function Nav() {
                     legacyBehavior
                     passHref
                     >
-                        <div className="flex flex-row-reverse justify-end pl-4 ease-out after:duration-500 after:block after:w-0.5 after:h-full after:origin-top-left after:scale-y-0 after:bg-primary after:transition-transform after:hover:origin-top-left after:hover:scale-y-100 after:focus:origin-top-left after:focus:scale-y-100 after:active:origin-top-left after:active:scale-y-100">
+                        <div className="flex flex-row-reverse justify-end pl-4 ease-out after:duration-500 after:block after:w-0.5 after:h-full after:origin-top-left after:scale-y-0 after:bg-background after:transition-transform after:hover:origin-top-left after:hover:scale-y-100 after:focus:origin-top-left after:focus:scale-y-100 after:active:origin-top-left after:active:scale-y-100">
                             <p className="pl-2">{link}</p>    
                         </div>
                     </Link>

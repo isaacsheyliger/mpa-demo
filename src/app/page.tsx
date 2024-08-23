@@ -4,7 +4,6 @@ import { Quattrocento } from 'next/font/google';
 
 import { Button } from '@/components/ui/button';
 import { Hero } from '@/app/_components/hero';
-import { Blurb } from '@/app/_components/blurb';
 
 import {
   Card,
@@ -22,6 +21,13 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
 
 import lawncare from '../../public/lawn-care.jpg';
 import treeremoval3 from '../../public/tree-removal-3.jpg';
@@ -101,7 +107,7 @@ export default function Home() {
 
         <div className='flex flex-col my-8'>
             <h1 className={`text-4xl self-center mt-4`}>Our Services</h1>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-4 m-16'>
+            <div className='hidden md:flex grid grid-cols-1 md:grid-cols-3 gap-4 m-16'>
                 {services.map((service, index) => (
                     <Link className='flex flex-col items-center' key={index} href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>
                         <Card className='relative transition ease-in-out w-full h-[275px]'>
@@ -122,6 +128,28 @@ export default function Home() {
                     </Link>
                 ))}
             </div>
+            
+            <Accordion type='single' className='flex md:hidden flex-col self-center py-8 px-16 space-y-4 w-[90%] bg-background' collapsible>
+                {blurbs.map((blurb, index) => (
+                <div
+                key={index}
+                >
+                    <AccordionItem value={`${blurb.title}`} className="border-primary">
+                        <AccordionTrigger className='flex justify-between bold text-foreground text-md px-2'>{blurb.title}</AccordionTrigger>
+                        <AccordionContent className='flex flex-col items-center space-y-8 px-2'>
+                            <Image src={blurb.img} alt={blurb.title} className='' />
+                            <p className=''>{blurb.description}</p>
+
+                            <Button className='w-24'>
+                                <Link href={blurb.href}>
+                                    Learn More
+                                </Link> 
+                            </Button>
+                        </AccordionContent>
+                    </AccordionItem>
+                </div>
+                ))}
+            </Accordion>
         </div>
 
         <div className={`flex items-center justify-end h-[1000px] mt-8 bg-fixed bg-center bg-no-repeat bg-cover bg-[url(../../public/gallery-6.jpg)]`}>

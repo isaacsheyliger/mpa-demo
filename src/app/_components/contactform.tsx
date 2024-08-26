@@ -47,57 +47,57 @@ export function ContactForm() {
 
     return (
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[20rem] md:w-[24rem]">
-            <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-                <FormItem>
-                    <FormControl>
-                        <Input className="bg-green-900" placeholder="Name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-            )}
-            /> 
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                    <FormControl>
-                        <Input className="bg-green-900" placeholder="Email" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-              )}
-            /> 
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                    <FormControl>
-                        <Input className="bg-green-900" placeholder="Phone Number" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-              )}
-            /> 
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                    <FormControl>
-                        <Textarea className="bg-green-900" placeholder="Enter your message here..." {...field} />
-                    </FormControl>
-                    <FormMessage />
-                </FormItem>
-              )}
-            /> 
-            <Button type="submit">Submit</Button>
-          </form>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-[20rem] md:w-[24rem]">
+                <FormField
+                control={form.control}
+                name="name"
+                render={({ field }) => (
+                    <FormItem>
+                        <FormControl>
+                            <Input className="bg-green-900" placeholder="Name" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+                /> 
+                <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                    <FormItem>
+                        <FormControl>
+                            <Input className="bg-green-900" placeholder="Email" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+                /> 
+                <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                    <FormItem>
+                        <FormControl>
+                            <Input className="bg-green-900" placeholder="Phone Number" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+                /> 
+                <FormField
+                control={form.control}
+                name="message"
+                render={({ field }) => (
+                    <FormItem>
+                        <FormControl>
+                            <Textarea className="bg-green-900" placeholder="Enter your message here..." {...field} />
+                        </FormControl>
+                        <FormMessage />
+                    </FormItem>
+                )}
+                /> 
+                <Button type="submit">Submit</Button>
+            </form>
         </Form>
       )
 }

@@ -12,8 +12,8 @@ export default function Page() {
             <div className="mb-8">
                 <Hero />
             </div>
-            <div className="flex flex-col items-center md:items-start md:flex-row md:justify-evenly mb-8">
-                <div className="px-8 my-4 md:my-0">
+            <div className="flex flex-col items-center md:flex-row md:justify-evenly mb-8">
+                <div className="px-8 my-4 md:my-0 md:mb-16">
                     <h2 className="text-4xl font-bold text-center">Contact Us</h2>
                     <p className="text-center">Have a question? Want to schedule a service? <br/> Send us a message!</p>
                 </div>

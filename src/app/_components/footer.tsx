@@ -17,7 +17,7 @@ export function Footer() {
     <footer className="grow-0 shrink-0 bg-primary text-background">
         <div className="p-8 md:p-16 flex flex-col md:flex-row justify-between space-y-8 md:space-y-0">
             {/* Logo & Sub */}
-            <div className="flex flex-col items-center md:items-start space-y-8 md:space-y-16">
+            <div className="flex flex-col items-center md:items-start space-y-8 md:space-y-12">
                 <div className="relative self-center md:self-start w-2/5">
                     <Image 
                     className="" 
@@ -25,8 +25,8 @@ export function Footer() {
                     alt="Logo"
                     />
                 </div>
-                <div className="flex flex-col items-center md:items-start p-0 lg:p-12 lg:bg-foreground w-fit">
-                    <h3 className="text-lg -mb-1">Subscribe to our newsletter</h3>
+                <div className="flex flex-col items-center md:items-start w-fit">
+                    <h3 className="text-lg text-secondary -mb-1">Subscribe to our newsletter</h3>
                     <p className="text-sm text-center md:text-left mb-2">Get the latest news and updates right in your inbox.</p>
                     <form className="flex flex-col lg:flex-row items-center">
                         <input

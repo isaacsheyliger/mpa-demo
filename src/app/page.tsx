@@ -75,7 +75,7 @@ export default function Home() {
             </div>
 
             <div className={`flex flex-col my-8`}>
-                <h1 className={`text-4xl text-center self-center bg-background`}>Our Services</h1>
+                <h1 className={`text-4xl text-center font-bold self-center bg-background`}>Our Services</h1>
                 <div className='hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 m-16'>
                     {services.map((service, index) => (
                         <Link className='flex flex-col items-center' key={index} href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>
@@ -124,7 +124,7 @@ export default function Home() {
             <div className={`flex items-center justify-end h-[1000px] mt-8 bg-fixed bg-center bg-no-repeat bg-cover bg-[url(../../public/gallery-6.jpg)]`}>
                 <div className='flex justify-center items-center w-1/2 h-2/5 bg-background'>
                     <div className='flex flex-col items-center w-1/2'>
-                        <h1 className='text-4xl w-fit'>About Us</h1>
+                        <h1 className='text-4xl font-bold w-fit'>About Us</h1>
                         <p className='w-fit my-8 text-foreground text-center'>We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.</p>
                         <Button className='w-24'>
                             <Link href='/about'>

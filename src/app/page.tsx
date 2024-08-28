@@ -75,7 +75,7 @@ export default function Home() {
             </div>
 
             <div className={`flex flex-col my-8`}>
-                <h1 className={`text-4xl text-center font-bold self-center bg-background`}>Our Services</h1>
+                <h1 className={`text-2xl md:text-4xl text-center font-bold self-center bg-background`}>Our Services</h1>
                 <div className='hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 m-16'>
                     {services.map((service, index) => (
                         <Link className='flex flex-col items-center' key={index} href={`/services/${service.title.toLowerCase().replace(' ', '-')}`}>
@@ -98,13 +98,13 @@ export default function Home() {
                     ))}
                 </div>
                 
-                <Accordion type='single' className='flex md:hidden flex-col self-center py-8 px-16 space-y-4 w-[90%] bg-background' collapsible>
+                <Accordion type='single' className='flex md:hidden flex-col self-center py-8 space-y-4 w-[90%] bg-background' collapsible>
                     {services.map((service, index) => (
                     <div
                     key={index}
                     >
                         <AccordionItem value={`${service.title}`} className="border-primary">
-                            <AccordionTrigger className='flex justify-between bold text-foreground text-md px-2'>{service.title}</AccordionTrigger>
+                            <AccordionTrigger className='flex justify-between bold text-foreground text-sm md:text-md px-2'>{service.title}</AccordionTrigger>
                             <AccordionContent className='flex flex-col items-center space-y-8 px-2'>
                                 <Image src={service.img} alt={service.title} className='' />
                                 <p className=''>{service.description}</p>
@@ -122,10 +122,10 @@ export default function Home() {
             </div>
 
             <div className={`flex items-center justify-end h-[1000px] mt-8 bg-fixed bg-center bg-no-repeat bg-cover bg-[url(../../public/gallery-6.jpg)]`}>
-                <div className='flex justify-center items-center w-1/2 h-2/5 bg-background'>
-                    <div className='flex flex-col items-center w-1/2'>
-                        <h1 className='text-4xl font-bold w-fit'>About Us</h1>
-                        <p className='w-fit my-8 text-foreground text-center'>We offer a variety of services to meet your needs. From lawn care to tree removal, we have you covered.</p>
+                <div className='flex justify-center items-center w-3/5 md:w-1/2 h-1/3 md:h-2/5 bg-background'>
+                    <div className='flex flex-col items-center w-[80%] md:w-1/2'>
+                        <h1 className='text-2xl md:text-4xl font-bold w-fit'>About Us</h1>
+                        <p className='w-fit my-8 text-foreground text-center'>We offer a variety of services to meet your needs. From lawn care to tree removal, we've got you covered.</p>
                         <Button className='w-24'>
                             <Link href='/about'>
                                 Learn More
@@ -136,7 +136,7 @@ export default function Home() {
             </div>
 
             <div className='flex md:hidden flex-col w-[80%] md:w-full self-center my-16'>
-                <h2 className={`text-4xl font-bold self-center mb-8`}>Customer Reviews</h2>
+                <h2 className={`text-2xl md:text-4xl font-bold self-center mb-8`}>Customer Reviews</h2>
                 <Carousel
                 opts={{
                     loop: true,
@@ -149,7 +149,7 @@ export default function Home() {
                         <CarouselItem key={index} className='flex justify-center'>
                             <div
                             key={index} 
-                            className='self-center max-w-[80%]'
+                            className='self-center md:max-w-[80%]'
                             >
                                 <Card className='flex flex-col my-2 items-center shadow-gray-500'>
                                     <CardHeader className='px-6 pt-6 pb-4'>

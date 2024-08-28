@@ -41,7 +41,7 @@ export default function Page() {
                 <Hero img={images} />
             </div>
             <h1 className='text-4xl self-center'>Services</h1>
-            <Accordion type='single' className='flex flex-col self-center py-8 px-16 space-y-4 w-[90%] bg-background' collapsible>
+            <Accordion type='single' className='flex flex-col self-center py-8 md:px-16 space-y-4 w-[90%] bg-background' collapsible>
                 {services.map((service, index) => (
                 <div
                 key={index}
